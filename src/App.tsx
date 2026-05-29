@@ -18,9 +18,9 @@ export default function App() {
         <header className="sticky top-0 z-40 rounded-b-[30px] bg-[#1C3144] px-8 py-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-0">
-              <img src={icon} alt="Orchard House logo" className="h-12 w-12 object-contain" />
+              <img src={icon} alt="Orchard House logo" className="h-11 w-11 object-contain" />
               <div>
-                <p className="text-sm font-semibold text-[#70161E] leading-tight text-[20px]">ОТДЫХ <br />РОССИИ</p>
+                <p className="text-sm font-semibold text-[#70161E]  text-[20px]">ОТДЫХ <br />РОССИИ</p>
               </div>
             </div>
 
@@ -40,7 +40,7 @@ export default function App() {
         </header>
 
         <div className="mt-10 rounded-[30px] border-[3px] border-[#1C3144]">
-          <div className="overflow-hidden rounded-[30px]">
+          <div className="overflow-hidden rounded-[27px]">
               <Hero />
 
         <section className="mt-10 rounded-[28px] bg-[#f6eee1] px-8 py-5 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
