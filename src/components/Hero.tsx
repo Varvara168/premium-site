@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[#12263f]/10" />
       </div>
 
-      <div className="relative z-10 min-h-[850px] px-8 py-20 pt-32 sm:px-12 sm:py-24 sm:pt-40 lg:px-16 lg:py-28 lg:pt-48">
+      <div className="relative z-10 min-h-[800px] px-8 py-20 pt-32 sm:px-12 sm:py-24 sm:pt-40 lg:px-16 lg:py-28 lg:pt-48">
         <div className="max-w-3xl">
           
           <h1 className="mt-8 text-bold leading-tight text-[#FEFAE0] md:text-[48px] serif-display">
