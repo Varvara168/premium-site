@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -21,7 +21,7 @@ body {
   min-height: 100vh;
   background-color: #000000;
   color: #12263f;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   background-image:
     radial-gradient(circle, rgba(161,31,43,0.16) 1px, transparent 1px),
     radial-gradient(circle, rgba(161,31,43,0.1) 1px, transparent 1px);
@@ -47,7 +47,7 @@ select {
 }
 
 .serif-display {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 * {
