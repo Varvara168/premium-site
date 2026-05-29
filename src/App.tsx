@@ -17,7 +17,7 @@ export default function App() {
       <div className="mx-auto max-w-[1040px] px-6 pb-24">
         <header className="sticky top-0 z-40 rounded-b-[30px] bg-[#1C3144] px-8 py-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="flex items-center gap-0">
+            <div className="flex items-center gap-1">
               <img src={icon} alt="Orchard House logo" className="h-11 w-11 object-contain" />
               <div>
                 <p className="font-semibold text-[#70161E] text-[20px] leading-5">ОТДЫХ <br />РОССИИ</p>
