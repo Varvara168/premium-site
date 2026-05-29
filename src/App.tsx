@@ -20,7 +20,7 @@ export default function App() {
             <div className="flex items-center gap-0">
               <img src={icon} alt="Orchard House logo" className="h-11 w-11 object-contain" />
               <div>
-                <p className="text-sm font-semibold text-[#70161E]  text-[20px]">ОТДЫХ <br />РОССИИ</p>
+                <p className="font-semibold text-[#70161E] text-[20px] leading-5">ОТДЫХ <br />РОССИИ</p>
               </div>
             </div>
 
@@ -33,7 +33,7 @@ export default function App() {
               <a href="#reserve" className="transition hover:text-[#FEFAE0]">Контакты</a>
             </nav>
 
-            <a href="#reserve" className="inline-flex items-center justify-center rounded-md bg-[#70161E] px-10 py-3 text-sm font-regular tracking-[0.1em] uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+            <a href="#reserve" className="inline-flex items-center justify-center rounded-md bg-[#70161E] px-12 py-3 text-[14px] font-regular tracking-[0.1em] uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
               Забронировать
             </a>
           </div>
