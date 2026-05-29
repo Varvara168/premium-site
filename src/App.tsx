@@ -20,7 +20,7 @@ export default function App() {
             <div className="flex items-center gap-0">
               <img src={icon} alt="Orchard House logo" className="h-12 w-12 object-contain" />
               <div>
-                <p className="text-sm font-bold text-[#70161E] text-[20px]">ОТДЫХ <br />РОССИИ</p>
+                <p className="text-sm font-semibold text-[#70161E] leading-tight text-[20px]">ОТДЫХ <br />РОССИИ</p>
               </div>
             </div>
 
