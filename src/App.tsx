@@ -40,7 +40,7 @@ export default function App() {
         </header>
 
         <div className="mt-10 rounded-[30px] border-[3px] border-[#1C3144]">
-          <div className="overflow-hidden rounded-[27px]">
+          <div className="overflow-hidden rounded-[26px]">
               <Hero />
 
         <section className="mt-10 rounded-[28px] bg-[#f6eee1] px-8 py-5 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
