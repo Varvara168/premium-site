@@ -1,7 +1,11 @@
-﻿import heroImage from "../assets/hero.png"
-import searchIcon from "../assets/icon.svg"
+﻿import { useRef, useState } from "react"
+import heroImage from "../assets/hero.png"
+import searchIcon from "../assets/search.png"
+import house337 from "../assets/house337.png"
 
 export default function Hero() {
+  const [showSearchInput, setShowSearchInput] = useState(false)
+  const searchInputRef = useRef<HTMLInputElement | null>(null)
   return (
     <div className="overflow-hidden rounded-[26px]">
     <section id="hero" className="relative overflow-hidden rounded-[20px] bg-slate-900/5 shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
@@ -17,7 +21,7 @@ export default function Hero() {
       <div className="relative z-10 min-h-[800px] px-8 py-20 pt-30 sm:px-12 sm:py-24 sm:pt-40 lg:px-16 lg:py-28 lg:pt-48">
         <div className="max-w-3xl">
           
-          <h1 className="mt-8 text-bold leading-none text-[#FEFAE0] md:text-[57px] serif-display">
+          <h1 className="mt-8 text-bold leading-none text-[#FEFAE0] md:text-[48px] serif-display">
             Приватный отдых <br />
             в живописных регионах России 
           </h1>
@@ -30,20 +34,20 @@ export default function Hero() {
 
     </section>
     
-    <section id="about-us" className="mt-10 rounded-[20px] bg-[#1C3144] px-8 py-5 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
-      <div className="mb-8 space-y-3 text-[#FEFAE0] text-[30px]">
-        <h2>Заслужили доверие особыми местами и сервисом</h2>
+    <section id="about-us" className="mt-10 rounded-[20px] bg-[#1C3144] px-20 py-5 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
+      <div className="mb-8 space-y-3 text-[#FEFAE0] font-normal text-[28px]">
+        <h2>Заслужили доверие особыми <br />местами и сервисом</h2>
       </div>
-      <div className="flex flex-col gap-4 text-[11px] sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-4 text-[11px] sm:flex-row sm:items-start sm:justify-between">
         <div>
-            <p className="font-medium text-[#FEFAE0] text-[30px]">6</p>
-            <p className="text-[#FEFAE0]/80 text-[16px]">Лет единый уровень <br /> сервиса</p>
+            <p className="font-normal text-[#FEFAE0] text-[48px]">6</p>
+            <p className="text-[#FEFAE0] font-light text-[16px]">Лет единый уровень <br /> сервиса</p>
         </div>
         <div>
-            <p className="font-medium text-[#FEFAE0] text-[30px]">5.0</p>
-            <p className="text-[#FEFAE0]/80 text-[16px]">Средняя оценка наших гостей</p>
+            <p className="font-normal text-[#FEFAE0] text-[48px]">5.0</p>
+            <p className="text-[#FEFAE0] font-light text-[16px]">Средняя оценка наших гостей</p>
         </div>
-        <button className="inline-flex items-center justify-center rounded-md bg-[#70161E] px-12 py-3 text-[14px] font-regular tracking-[0.1em] uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+        <button className="inline-flex items-center justify-center rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular tracking-[0.1em] uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
           ПОДРОБНЕЕ О СЕРВИСЕ
         </button>
       </div>
@@ -52,33 +56,53 @@ export default function Hero() {
     <section id="search" className="mt-12 rounded-[20px]">
       <div className="grid gap-6">
         <div className="grid gap-2 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_auto_minmax(0,1fr)] items-center">
-          <label className="min-w-0 rounded-[2px] border border-[#1C3144] bg-white">
+          <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
             <input
               type="text"
-              className="w-full bg-white px-6 py-4 text-sm font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+              className="w-full bg-[#FEFAE0] rounded-[5px]  px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
               placeholder="Дата"
             />
           </label>
-          <label className="min-w-0 rounded-[2px] border border-[#1C3144] bg-white">
+          <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
             <input
               type="text"
-              className="w-full bg-white px-6 py-4 text-sm font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+              className="w-full bg-[#FEFAE0] rounded-[5px]  px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
               placeholder="Кол-во гостей"
             />
           </label>
-          <label className="min-w-0 rounded-[2px] border border-[#1C3144] bg-white">
+          <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
             <input
               type="text"
-              className="w-full bg-white px-6 py-4 text-sm font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+              className="w-full bg-[#FEFAE0] rounded-[5px]  px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
               placeholder="Пункт назначения"
             />
           </label>
-          <div className="flex items-center justify-center">
-            <button type="button" className="inline-flex h-11 w-11 items-center justify-center bg-transparent p-0 text-[#1C3144] transition hover:text-[#12263f] focus:outline-none" aria-label="search">
-              <img src={searchIcon} alt="search icon" className="h-5 w-5" />
+          <div className="relative flex items-center justify-center">
+            <button
+              type="button"
+              onClick={() => {
+                setShowSearchInput(true)
+                setTimeout(() => searchInputRef.current?.focus(), 0)
+              }}
+              className="inline-flex h-12 w-12 items-center justify-center bg-transparent p-0 text-[#1C3144] transition hover:text-[#12263f] focus:outline-none"
+              aria-label="search"
+            >
+              <img src={searchIcon} alt="search icon" className="h-15 w-15" />
             </button>
+
+            {showSearchInput && (
+              <label className="absolute top-full left-1/2 transform -translate-x-1/2 translate-y-2 min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0] w-64">
+                <input
+                  ref={searchInputRef}
+                  onBlur={() => setShowSearchInput(false)}
+                  type="text"
+                  className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+                  placeholder="Поиск по названию"
+                />
+              </label>
+            )}
           </div>
-          <button type="button" className="min-w-0 rounded-[2px] bg-[#1E40AF] px-6 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#132a64] w-full">
+          <button type="button" className="min-w-0 rounded-[5px] bg-[#1C3144] px-6 py-3 text-[20px] font-semibold text-[#FEFAE0] transition hover:bg-[#12263f] w-full">
             Найти
           </button>
         </div>
@@ -86,35 +110,33 @@ export default function Hero() {
     </section>
 
     <section id="best-offer" className="mt-12 rounded-[20px] bg-[#92ab79] p-10 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
-      <div className="grid gap-10 lg:grid-cols-[1fr_0.95fr]">
-        <div className="space-y-8">
-          <div className="inline-flex items-center gap-3 rounded-full border border-[#12263f]/15 bg-white/80 px-4 py-2 text-[11px] uppercase tracking-[0.35em] text-[#12263f]/80 backdrop-blur-sm">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#70161E]" /> Sustainability by design
-          </div>
+      <div className="inline-flex  text-[#12263f]">
+          <p className="text-[20px] miama">Лучшее предложение</p>
+          <h2 className="text-[24px] miama">Саратовское водохранилище</h2>
+        </div>
+      <div className="grid gap-10 lg:grid-cols-3">
+        
+        <div className="space-y-8 lg:col-span-1">
+          
           <div className="space-y-5">
-            <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Retreat narrative</p>
-            <h2 className="text-4xl font-[300] leading-tight text-[#12263f] md:text-5xl serif-display">Современная загородная резиденция с камерным вниманием к деталям.</h2>
-            <p className="max-w-xl text-base leading-8 text-[#12263f]/80">Медитативный интерьер, авторская кухня и природное окружение создают атмосферу дорогого книжного каталога и премиального eco resort.</p>
+            <h2 className=" font-medium text-[#FEFAE0] text-[32px] serif-display">Дом №337</h2>
+            <p className="text-[18px] font-light leading-8 text-[#FEFAE0]">Медитативный интерьер, авторская кухня и природное окружение создают атмосферу дорогого книжного каталога и премиального eco resort.</p>
           </div>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a href="#reserve" className="inline-flex items-center justify-center rounded-md bg-[#70161E] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#FEFAE0] transition duration-300 hover:opacity-90">
+            <button className="inline-flex items-center justify-center rounded-md bg-[#70161E] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#FEFAE0] transition duration-300 hover:opacity-90">
               Discover stay
-            </a>
-            <div className="rounded-3xl bg-white/90 p-5 shadow-[0_10px_30px_rgba(17,24,39,0.06)]">
-              <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/60">Private arrival</p>
-              <p className="mt-3 text-2xl font-semibold text-[#12263f]">11 suites</p>
-            </div>
+            </button>
+            
           </div>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
-          <div className="relative overflow-hidden rounded-[28px] bg-[#d9d1c2] p-6">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80')] bg-cover bg-center opacity-30" />
-            <div className="relative space-y-4">
-              <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/80">House concept</p>
-              <h3 className="text-2xl font-medium text-[#12263f]">Архитектурная история и природный контекст.</h3>
-              <p className="text-sm leading-7 text-[#12263f]/70">аждый уголок создан для неспешного отдыха, тихих завтраков на террасе и вечерних прогулок.</p>
-            </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 lg:col-span-2">
+          <div className="overflow-hidden rounded-[5px] lg:col-span-2 lg:-mx-10 lg:rounded-none">
+            <img
+              src={house337}
+              alt="House 337"
+              className="block w-full h-[800px] object-cover"
+            />
           </div>
           <div className="grid gap-6">
             <div className="rounded-[28px] bg-[#fff] p-6 shadow-[0_10px_30px_rgba(17,24,39,0.06)]">
@@ -129,23 +151,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="mt-12 grid gap-6 xl:grid-cols-[1.3fr_0.9fr]">
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-[28px] bg-[#d9d1c2] p-8 shadow-[0_10px_30px_rgba(17,24,39,0.06)]">
-            <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Ritual</p>
-            <p className="mt-4 text-2xl font-semibold text-[#12263f]">Спа-программа</p>
-          </div>
-          <div className="rounded-[28px] bg-[#fff] p-8 shadow-[0_10px_30px_rgba(17,24,39,0.06)]">
-            <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Studio</p>
-            <p className="mt-4 text-2xl font-semibold text-[#12263f]">Творческие мастер-классы</p>
-          </div>
-        </div>
-        <div className="rounded-[32px] bg-[#fff] p-10 shadow-[0_10px_40px_rgba(17,24,39,0.06)]">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Editorial gallery</p>
-          <h3 className="mt-4 text-3xl font-[350] text-[#12263f]">Сеть тихих картин и деталей в каждом помещении.</h3>
-          <p className="mt-4 text-sm leading-7 text-[#12263f]/75">лавные формы, натуральные материалы и редкая фактура создают атмосферу дорогой полиграфии.</p>
-        </div>
-      </div>
+      
     </section>
 
     <section id="leisure" className="mt-16 rounded-[20px] bg-[#f5ecdf]/0 px-8 py-12 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
