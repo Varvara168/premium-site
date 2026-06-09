@@ -110,24 +110,30 @@ export default function Hero() {
     </section>
 
     <section id="best-offer" className="mt-12 rounded-[20px] bg-[#92ab79] p-10 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
-      <div className="inline-flex  text-[#12263f]">
-          <p className="text-[20px] miama">Лучшее предложение</p>
+      <div className="text-[#12263f] flex items-center justify-between gap-8 mb-10 w-full">
           <h2 className="text-[24px] miama">Саратовское водохранилище</h2>
+          <p className="text-[20px] miama">Лучшее предложение</p>
+          
         </div>
       <div className="grid gap-10 lg:grid-cols-3">
         
-        <div className="space-y-8 lg:col-span-1">
-          
-          <div className="space-y-5">
-            <h2 className=" font-medium text-[#FEFAE0] text-[32px] serif-display">Дом №337</h2>
-            <p className="text-[18px] font-light leading-8 text-[#FEFAE0]">Медитативный интерьер, авторская кухня и природное окружение создают атмосферу дорогого книжного каталога и премиального eco resort.</p>
+        
+        <div className="lg:col-span-1">
+          <div className="flex justify-end mb-32">
+            <div className="w-[40px] h-[90px] bg-[#70161E]"></div>
+            <div className="w-[40px] h-[90px] bg-[#12263f]"></div>
           </div>
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="">
+            <h2 className=" font-medium text-[#FEFAE0] text-[32px] serif-display ">Дом №337</h2>
+            <p className="text-[18px] font-light leading-8 text-[#FEFAE0] py-20">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
+          </div>
+          <div className="flex justify-start ">
             <button className="inline-flex items-center justify-center rounded-md bg-[#70161E] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#FEFAE0] transition duration-300 hover:opacity-90">
-              Discover stay
+              подробнее
             </button>
             
           </div>
+          
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 lg:col-span-2">
