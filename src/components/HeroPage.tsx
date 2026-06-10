@@ -4,7 +4,8 @@ import searchIcon from "../assets/search.png"
 import house337 from "../assets/house337.png"
 import transfer from "../assets/image328.png"
 import women from "../assets/image330.png"
-
+import blue from "../assets/blue.png"
+import culinary from "../assets/image326.png"
 
 export default function Hero() {
   const [showSearchInput, setShowSearchInput] = useState(false)
@@ -173,7 +174,7 @@ export default function Hero() {
       
     </section>
 
-    <section id="leisure" className="mt-20 rounded-[20px] px-20 py-12 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
+    <section id="leisure" className="mt-20 rounded-[20px] px-20 py-12 ">
       <div className="mb-16  text-[#1C3144] font-medium text-[32px]">
         <h2>Досуг на территории</h2>
       </div>
@@ -215,7 +216,7 @@ export default function Hero() {
       </div>
     </section>
 
-    <section id="infrastructure" className="mt-10 rounded-[28px] px-20 py-12 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
+    <section id="infrastructure" className="mt-10 rounded-[28px] px-20 py-12 ">
       <div className="mb-16 text-[#1C3144] font-medium text-[32px]">
         <p className="py-2">Инфраструктура комплексов</p>
         <p className="text-[16px]  font-normal">Всё устроено так, чтобы вы не думали о мелочах <br />Разрешите себе отдыхать <br />Это место, где не нужно пытаться понравиться</p>
@@ -244,33 +245,41 @@ export default function Hero() {
       </div>
     </section>
 
-    <section id="culinary" className="mt-16 rounded-[28px] bg-[#12263f] px-8 py-10 text-[#FEFAE0] shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
-      <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] items-center">
-        <div className="rounded-[28px] bg-[#1b2a44] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.15)]">
-          <div className="h-[420px] rounded-[28px] bg-[url('https://images.unsplash.com/photo-1541544181557-5c04c29f8c27?auto=format&fit=crop&w=900&q=80')] bg-cover bg-center" />
+    <section id="culinary" className="relative mt-16 rounded-[20px] bg-[#12263f] px-20 py-10 text-[#FEFAE0] ">
+      <img src={blue} alt="decor" className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 md:w-40" />
+      <div className="grid lg:grid-cols-2 gap-10">
+
+        <div className="overflow-hidden rounded-tr-[5px] rounded-br-[5px] col-span-1 aspect-[4/3] -ml-20">
+          <img src={culinary} alt="House 337 - 1" className="block w-full h-full object-cover" />
         </div>
-        <div className="space-y-6">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-[#f5ecdf]/80">Gastronomy</p>
-          <h2 className="text-4xl font-[300] leading-tight text-[#FEFAE0]">Кулинария</h2>
-          <p className="max-w-xl text-base leading-8 text-[#d9d1c2]/85">Авторское меню, локальные продукты и спокойная вечерняя сервировка в атмосфере private dinner.</p>
-          <div className="space-y-4 rounded-[24px] bg-[#12263f]/90 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <span className="text-sm uppercase tracking-[0.35em] text-[#d9d1c2]/70">Craft</span>
-              <span className="text-sm font-semibold">Seasonal menu</span>
-            </div>
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <span className="text-sm uppercase tracking-[0.35em] text-[#d9d1c2]/70">Private</span>
-              <span className="text-sm font-semibold">Chef table</span>
-            </div>
-            <div className="flex items-center justify-between pt-4">
-              <span className="text-sm uppercase tracking-[0.35em] text-[#d9d1c2]/70">Season</span>
-              <span className="text-sm font-semibold">Forest harvest</span>
+        
+        <div className="py-8"> 
+          <h2 className="text-[18px] leading-tight miama text-[#FEFAE0]">Фермерские продукты и простая еда натуральный вкус региона</h2>
+          <div className="py-8">
+            <div className="space-y-4">
+              <div className="flex items-start gap-4">
+                <span className="text-[16px] font-light text-[#FEFAE0]">01</span>
+                <p className="text-[16px] font-light  leading-tight">Основа — шведский стол</p>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="text-[16px] font-light text-[#FEFAE0]">02</span>
+                <p className="text-[16px] font-light  leading-tight">Настоящий вкус региона</p>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="text-[16px] font-light text-[#FEFAE0]">03</span>
+                <p className="text-[16px] font-light  leading-tight">Если хочется большего — можно заказать отдельно</p>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="text-[16px] font-light text-[#FEFAE0]">04</span>
+                <p className="text-[16px] font-light  leading-tight">Атмосфера загородного отдыха ощущается полностью</p>
+              </div>
             </div>
           </div>
-          <a href="#reserve" className="inline-flex items-center justify-center rounded-md bg-[#70161E] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#FEFAE0] transition duration-300 hover:opacity-90">
-            Reserve table
-          </a>
-        </div>
+          <button className="inline-flex items-center justify-center w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+            ПОДРОБНЕЕ О СЕРВИСЕ
+          </button>
+        
+      </div>
       </div>
     </section>
 
