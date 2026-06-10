@@ -47,7 +47,7 @@ export default function Hero() {
             <p className="font-normal text-[#FEFAE0] text-[48px]">5.0</p>
             <p className="text-[#FEFAE0] font-light text-[16px]">Средняя оценка наших гостей</p>
         </div>
-        <button className="inline-flex items-center justify-center rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular tracking-[0.1em] uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+        <button className="inline-flex items-center justify-center w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular tracking-[0.1em] uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
           ПОДРОБНЕЕ О СЕРВИСЕ
         </button>
       </div>
@@ -114,46 +114,56 @@ export default function Hero() {
           <h2 className="text-[24px] miama">Саратовское водохранилище</h2>
           <p className="text-[20px] miama">Лучшее предложение</p>
           
-        </div>
-      <div className="grid gap-10 lg:grid-cols-3">
+      </div>
+      <div className="grid gap-10 lg:grid-cols-3 -mx-10 items-start">
         
         
-        <div className="lg:col-span-1">
-          <div className="flex justify-end mb-32">
+        <div className="lg:col-span-1 px-10">
+          <div className="flex justify-end mb-20 -mr-20">
             <div className="w-[40px] h-[90px] bg-[#70161E]"></div>
             <div className="w-[40px] h-[90px] bg-[#12263f]"></div>
           </div>
           <div className="">
             <h2 className=" font-medium text-[#FEFAE0] text-[32px] serif-display ">Дом №337</h2>
-            <p className="text-[18px] font-light leading-8 text-[#FEFAE0] py-20">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
+            <p className="text-[18px] font-light leading-8 text-[#FEFAE0] py-16">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
           </div>
-          <div className="flex justify-start ">
-            <button className="inline-flex items-center justify-center rounded-md bg-[#70161E] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#FEFAE0] transition duration-300 hover:opacity-90">
+          <div className="-ml-10 flex">
+            <button className="inline-flex items-center justify-center w-[270px] rounded-tr-[5px] rounded-br-[5px] bg-[#1C3144] px-8 py-4 text-[16px] font-regular tracking-[0.1em] uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
               подробнее
             </button>
-            
           </div>
           
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 lg:col-span-2">
-          <div className="overflow-hidden rounded-[5px] lg:col-span-2 lg:-mx-10 lg:rounded-none">
+        <div className="lg:col-span-2">
+          <div className="overflow-hidden rounded-[5px] lg:rounded-none w-[700px] h-[800px] max-w-full">
             <img
               src={house337}
               alt="House 337"
-              className="block w-full h-[800px] object-cover"
+              className="block w-full h-full object-cover"
             />
           </div>
-          <div className="grid gap-6">
-            <div className="rounded-[28px] bg-[#fff] p-6 shadow-[0_10px_30px_rgba(17,24,39,0.06)]">
-              <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Atelier pool</p>
-              <p className="mt-4 text-lg font-semibold text-[#12263f]">Одна зона с видом на зелёную долину.</p>
+
+          <div className="grid grid-cols-3 gap-6 mt-6">
+            <div className="overflow-hidden rounded-[5px] col-span-2 aspect-[3/4]">
+              <img src={house337} alt="House 337 - 1" className="block w-full h-full object-cover" />
             </div>
-            <div className="rounded-[28px] bg-[#fff] p-6 shadow-[0_10px_30px_rgba(17,24,39,0.06)]">
-              <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Library lounge</p>
-              <p className="mt-4 text-lg font-semibold text-[#12263f]">Тишина, книги и деревенский уют в авторской стилистике.</p>
+            <div className="overflow-hidden rounded-[5px] col-span-1 aspect-[3/4]">
+              <img src={house337} alt="House 337 - 2" className="block w-full h-full object-cover" />
             </div>
           </div>
+
+          <div className="mt-6 grid grid-cols-8 gap-6 items-center">
+            <div className="col-span-1" />
+            <div className="col-span-7 overflow-hidden rounded-[5px] aspect-[6/3]">
+              <img src={house337} alt="House 337 - wide" className="block w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+        <div className="col-span-3 flex justify-center py-4">
+          <button className="inline-flex items-center justify-center w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular tracking-[0.1em] uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+            все дома
+          </button>
         </div>
       </div>
 
