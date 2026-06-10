@@ -47,7 +47,7 @@ export default function Hero() {
             <p className="font-normal text-[#FEFAE0] text-[48px]">5.0</p>
             <p className="text-[#FEFAE0] font-light text-[16px]">Средняя оценка наших гостей</p>
         </div>
-        <button className="inline-flex items-center justify-center w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular tracking-[0.1em] uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+        <button className="inline-flex items-center justify-center w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
           ПОДРОБНЕЕ О СЕРВИСЕ
         </button>
       </div>
@@ -128,7 +128,7 @@ export default function Hero() {
             <p className="text-[18px] font-light leading-8 text-[#FEFAE0] py-16">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
           </div>
           <div className="-ml-10 flex">
-            <button className="inline-flex items-center justify-center w-[270px] rounded-tr-[5px] rounded-br-[5px] bg-[#1C3144] px-8 py-4 text-[16px] font-regular tracking-[0.1em] uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+            <button className="inline-flex items-center justify-center w-[270px] rounded-tr-[5px] rounded-br-[5px] bg-[#1C3144] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
               подробнее
             </button>
           </div>
@@ -161,7 +161,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="col-span-3 flex justify-center py-4">
-          <button className="inline-flex items-center justify-center w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular tracking-[0.1em] uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+          <button className="inline-flex items-center justify-center w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
             все дома
           </button>
         </div>
@@ -170,29 +170,44 @@ export default function Hero() {
       
     </section>
 
-    <section id="leisure" className="mt-16 rounded-[20px] bg-[#f5ecdf]/0 px-8 py-12 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
-      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-[24px] bg-white p-8 shadow-[0_10px_30px_rgba(17,24,39,0.05)]">
-            <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Calm</p>
-            <p className="mt-4 text-xl font-semibold text-[#12263f]">Собственное пространство</p>
+    <section id="leisure" className="mt-16 rounded-[20px] px-20 py-12 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
+      <div className="mb-8 space-y-3 text-[#1C3144] font-medium text-[32px]">
+        <h2>Досуг на территории</h2>
+      </div>
+      <div className="">
+        
+        <div className="grid grid-cols-4 -gap-20 mt-6 -mx-40 items-center">
+          <div className="overflow-hidden rounded-[5px] col-span-1 aspect-[3/2]">
+            <img src={house337} alt="House 337 - 2" className="block w-full h-full object-cover" />
           </div>
-          <div className="rounded-[28px] bg-[#d9d1c2] p-8 shadow-[0_10px_30px_rgba(17,24,39,0.06)]">
-            <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Centerpiece</p>
-            <p className="mt-4 text-2xl font-semibold text-[#12263f]">Досуг</p>
+          <div className="overflow-hidden rounded-[5px] col-span-2 aspect-[3/2]">
+            <img src={house337} alt="House 337 - 1" className="block w-full h-full object-cover" />
           </div>
-          <div className="rounded-[24px] bg-white p-8 shadow-[0_10px_30px_rgba(17,24,39,0.05)]">
-            <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Signature</p>
-            <p className="mt-4 text-xl font-semibold text-[#12263f]">алый формат, большой характер</p>
+          <div className="overflow-hidden rounded-[5px] col-span-1 aspect-[3/2]">
+            <img src={house337} alt="House 337 - 3" className="block w-full h-full object-cover" />
           </div>
         </div>
-        <div className="space-y-6">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Why retreat</p>
-          <h2 className="text-4xl font-[300] leading-tight text-[#12263f]">Досуг</h2>
-          <p className="max-w-xl text-base leading-8 text-[#12263f]/80">аждая деталь — от материалов до света — выстроена вокруг ощущения медленного ритма, редкой красоты и полной заботы.</p>
-          <a href="#experience" className="inline-flex items-center justify-center rounded-md bg-[#70161E] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#FEFAE0] transition duration-300 hover:opacity-90">
-            Explore details
-          </a>
+
+        <div className="grid grid-cols-2 gap-20 py-12">
+          <div className="col-span-1 space-y-4">
+            <p className="font-medium text-[20px]">Развлечение 1</p>
+            <p>Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
+          </div>
+          <div className="col-span-1">
+            <div className="flex justify-content gap-6 mb-4">
+              <p className="font-medium text-[20px]">Цена</p>
+              <p>10000 руб.</p>
+            </div>
+            <div className="flex justify-content gap-6 mb-4">
+              <p className="font-medium text-[20px]">Локация</p>
+              <p>Книжный клуб</p>
+            </div>
+          </div>
+        </div>
+        <div className="col-span-3 flex justify-center py-10">
+          <button className="inline-flex items-center justify-center w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+            больше о досуге
+          </button>
         </div>
       </div>
     </section>
