@@ -170,8 +170,8 @@ export default function Hero() {
       
     </section>
 
-    <section id="leisure" className="mt-16 rounded-[20px] px-20 py-12 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
-      <div className="mb-8 space-y-3 text-[#1C3144] font-medium text-[32px]">
+    <section id="leisure" className="mt-20 rounded-[20px] px-20 py-12 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
+      <div className="mb-16  text-[#1C3144] font-medium text-[32px]">
         <h2>Досуг на территории</h2>
       </div>
       <div className="">
@@ -204,7 +204,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="col-span-3 flex justify-center py-10">
+        <div className="col-span-3 flex justify-center py-8">
           <button className="inline-flex items-center justify-center w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
             больше о досуге
           </button>
