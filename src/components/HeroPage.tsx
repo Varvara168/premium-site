@@ -2,6 +2,9 @@
 import heroImage from "../assets/hero.png"
 import searchIcon from "../assets/search.png"
 import house337 from "../assets/house337.png"
+import transfer from "../assets/image328.png"
+import women from "../assets/image330.png"
+
 
 export default function Hero() {
   const [showSearchInput, setShowSearchInput] = useState(false)
@@ -147,7 +150,7 @@ export default function Hero() {
           <div className="grid grid-cols-3 gap-6 mt-6">
             <div className="overflow-hidden rounded-[5px] col-span-2 aspect-[3/4]">
               <img src={house337} alt="House 337 - 1" className="block w-full h-full object-cover" />
-            </div>
+            </div> 
             <div className="overflow-hidden rounded-[5px] col-span-1 aspect-[3/4]">
               <img src={house337} alt="House 337 - 2" className="block w-full h-full object-cover" />
             </div>
@@ -212,25 +215,32 @@ export default function Hero() {
       </div>
     </section>
 
-    <section id="infrastructure" className="mt-16 rounded-[28px] bg-white px-8 py-12 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
-      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="space-y-5">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Infrastructure</p>
-          <h2 className="text-4xl font-[300] leading-tight text-[#12263f]">Инфраструктура</h2>
-          <p className="max-w-xl text-base leading-8 text-[#12263f]/75">ва отдельных ядра для приема гостей, работы и расслабления формируют архитектурную структуру резиденции.</p>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2">
-          <div className="rounded-[28px] bg-[#f5ecdf] p-6 shadow-[0_10px_30px_rgba(17,24,39,0.05)]">
-            <div className="mb-4 h-44 rounded-[24px] bg-[url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80')] bg-cover bg-center" />
-            <p className="text-[13px] uppercase tracking-[0.35em] text-[#12263f]/70">Guest house</p>
-            <p className="mt-3 text-lg font-semibold text-[#12263f]">Тихие апартаменты с личными террасами.</p>
+    <section id="infrastructure" className="mt-10 rounded-[28px] px-20 py-12 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
+      <div className="mb-16 text-[#1C3144] font-medium text-[32px]">
+        <p className="py-2">Инфраструктура комплексов</p>
+        <p className="text-[16px]  font-normal">Всё устроено так, чтобы вы не думали о мелочах <br />Разрешите себе отдыхать <br />Это место, где не нужно пытаться понравиться</p>
+      </div>
+      <div className="grid gap-30 px-24 -mt-8">
+        
+        <div className="grid gap-10 sm:grid-cols-2 items-end">
+          <div className="">
+            <div className="overflow-hidden rounded-[5px] col-span-1 aspect-[4/3]">
+              <img src={transfer} alt="House 337 - 1" className="block w-full h-full object-cover" />
+            </div> 
+            
           </div>
-          <div className="rounded-[28px] bg-[#f5ecdf] p-6 shadow-[0_10px_30px_rgba(17,24,39,0.05)]">
-            <div className="mb-4 h-44 rounded-[24px] bg-[url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80')] bg-cover bg-center" />
-            <p className="text-[13px] uppercase tracking-[0.35em] text-[#12263f]/70">Garden House</p>
-            <p className="mt-3 text-lg font-semibold text-[#12263f]">Общая кухня, библиотека и зимний сад.</p>
+          <div className="">
+            <div className="overflow-hidden rounded-[5px] col-span-1 max-h-[300px] aspect-[3/4]">
+              <img src={women} alt="House 337 - 1" className="block w-full h-full object-cover" />
+            </div> 
+            
           </div>
         </div>
+        <div className="grid gap-10 sm:grid-cols-2">
+          <p className="py-4">Трансфер для вас</p>
+          <p className="py-4">Личный помошник на всё время <br />отдыха</p>
+        </div>
+        
       </div>
     </section>
 
