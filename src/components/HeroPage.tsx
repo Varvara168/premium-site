@@ -284,43 +284,69 @@ export default function Hero() {
     </section>
 
     <section id="reserve" className="mt-16 rounded-[28px] bg-[#f8f1e7] px-8 py-10 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
-      <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
+      <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div className="space-y-8">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Statistics</p>
-          <div className="space-y-6 rounded-[28px] bg-white/90 p-8 shadow-[0_10px_30px_rgba(17,24,39,0.05)]">
-            <div className="text-5xl font-semibold text-[#12263f]">42</div>
-            <p className="text-sm uppercase tracking-[0.35em] text-[#12263f]/70">private experiences per season</p>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div className="rounded-[24px] bg-white p-6 shadow-[0_10px_30px_rgba(17,24,39,0.05)]">
-              <p className="text-sm font-semibold text-[#12263f]">11 suites</p>
-              <p className="mt-3 text-sm leading-6 text-[#12263f]/75">Дизайн в минималистичном стиле и натуральные материалы.</p>
-            </div>
-            <div className="rounded-[24px] bg-white p-6 shadow-[0_10px_30px_rgba(17,24,39,0.05)]">
-              <p className="text-sm font-semibold text-[#12263f]">Carrara rituals</p>
-              <p className="mt-3 text-sm leading-6 text-[#12263f]/75">Спа-программы на базе трав и мягкой энергетики места.</p>
+          <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Форма для упрощения выбора</p>
+          <div className="rounded-[28px] bg-[#12263f] p-8 shadow-[0_10px_30px_rgba(17,24,39,0.05)]">
+            <div className="flex flex-col gap-4 text-[11px]">
+              <div className="flex items-center gap-4">
+                <p className="font-normal text-[#FEFAE0] text-[48px]">6</p>
+                <p className="text-[#FEFAE0] font-light text-[16px]">Лет единый уровень <br /> сервиса</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <p className="font-normal text-[#FEFAE0] text-[48px]">5.0</p>
+                <p className="text-[#FEFAE0] font-light text-[16px]">Средняя оценка наших <br /> гостей</p>
+              </div>
             </div>
           </div>
         </div>
         <form className="space-y-6 rounded-[28px] bg-white p-8 shadow-[0_10px_30px_rgba(17,24,39,0.05)]">
           <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Enquiry</p>
-          <h3 className="text-3xl font-[300] text-[#12263f]">Request your private stay</h3>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="space-y-2 text-sm text-[#12263f]/80">
-              Name
-              <input className="w-full rounded-[14px] border border-[#12263f]/10 bg-[#f5ecdf] px-4 py-3 text-sm text-[#12263f] outline-none transition focus:border-[#70161E]" type="text" placeholder="Your name" />
+          <h3 className="text-3xl font-[300] text-[#12263f]">Запрос на бронирование</h3>
+          <div className="space-y-4">
+            <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
+              <span className="sr-only">Фамилия Имя</span>
+              <input
+                type="text"
+                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+                placeholder="Фамилия Имя"
+              />
             </label>
-            <label className="space-y-2 text-sm text-[#12263f]/80">
-              Email
-              <input className="w-full rounded-[14px] border border-[#12263f]/10 bg-[#f5ecdf] px-4 py-3 text-sm text-[#12263f] outline-none transition focus:border-[#70161E]" type="email" placeholder="you@email.com" />
+            <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
+              <span className="sr-only">Номер телефона</span>
+              <input
+                type="tel"
+                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+                placeholder="Номер телефона"
+              />
+            </label>
+            <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
+              <span className="sr-only">Город назначения</span>
+              <input
+                type="text"
+                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+                placeholder="Город назначения"
+              />
+            </label>
+            <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
+              <span className="sr-only">Дата</span>
+              <input
+                type="text"
+                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+                placeholder="Дата"
+              />
+            </label>
+            <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
+              <span className="sr-only">Время для связи</span>
+              <input
+                type="text"
+                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+                placeholder="Время для связи"
+              />
             </label>
           </div>
-          <label className="space-y-2 text-sm text-[#12263f]/80">
-            Message
-            <textarea className="min-h-[150px] w-full rounded-[14px] border border-[#12263f]/10 bg-[#f5ecdf] px-4 py-3 text-sm text-[#12263f] outline-none transition focus:border-[#70161E]" placeholder="Tell us your ideal retreat" />
-          </label>
           <button className="inline-flex w-full items-center justify-center rounded-md bg-[#70161E] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#FEFAE0] transition duration-300 hover:opacity-90">
-            Send inquiry
+            Отправить запрос
           </button>
         </form>
       </div>
