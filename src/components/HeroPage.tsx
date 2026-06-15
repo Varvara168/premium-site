@@ -6,6 +6,9 @@ import transfer from "../assets/image328.png"
 import women from "../assets/image330.png"
 import blue from "../assets/blue.png"
 import culinary from "../assets/image326.png"
+import map from "../assets/map.png"
+import img1 from "../assets/1_png.png"
+import img2 from "../assets/2_png.png"
 
 export default function Hero() {
   const [showSearchInput, setShowSearchInput] = useState(false)
@@ -341,46 +344,71 @@ export default function Hero() {
         </form>
       </div>
     </section>
+    
+    <section id="location" className="mt-16 rounded-[20px] py-1">
+      <div className="relative ">
+        <div className="w-[440px] h-[530px] rounded-[20px] bg-[#1C3144] p-20 text-[#FEFAE0]">
+          <div>
+            <p className="mb-8 text-[#FEFAE0] font-normal text-[28px]">
+              Главный офис
+            </p>
 
-    <section id="location" className="mt-16 rounded-[20px] bg-white px-8 py-10 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
-      <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="rounded-[28px] bg-[#12263f] p-8 text-[#FEFAE0] shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-[#d9d1c2]/80">Location</p>
-          <h3 className="mt-4 text-3xl font-[300] leading-tight">Тихая загородная деревня, рука об руку с природой.</h3>
-          <p className="mt-5 max-w-lg text-sm leading-7 text-[#d9d1c2]/85">Свежий воздух, лесные тропы и приватная территория в шаге от исторического озера.</p>
-          <div className="mt-8 space-y-4 rounded-[24px] bg-[#1b2a44] p-6">
-            <p className="text-sm uppercase tracking-[0.35em] text-[#d9d1c2]/70">Address</p>
-            <p className="text-lg font-medium">Village estate, North region</p>
-            <p className="text-sm text-[#d9d1c2]/80">Private access, 35 minutes from town</p>
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <span className="text-[16px] font-light text-[#FEFAE0]">Телефон:</span>
+                <p className="text-[16px] font-light leading-tight">+7 1234567890</p>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="text-[16px] font-light text-[#FEFAE0]">Почта:</span>
+                <p className="text-[16px] font-light leading-tight">mail@yandex.ru</p>
+              </div>
+
+              <div className="flex items-start gap-2">
+                <span className="text-[16px] font-light text-[#FEFAE0]">Адрес:</span>
+                <p className="text-[16px] font-light leading-tight">г. Самара, Ново-Садовая 44,<br />офис 111</p>
+              </div>
+            </div>
+
+            <a href="">
+              <p className="text-[16px] font-extralight text-[#FEFAE0] mt-28">Полный список адресов</p>
+            </a>
           </div>
         </div>
-        <div className="overflow-hidden rounded-[28px] bg-[#d9d1c2] p-6">
-          <div className="h-[420px] rounded-[28px] bg-[linear-gradient(135deg,rgba(17,24,39,0.08),rgba(161,31,43,0.18))]" />
+
+        <div className="absolute top-11 left-[380px] z-20 ">
+          <img src={map} alt="Map" className="w-full h-[440px]  rounded-[5px] object-cover" />
         </div>
+
       </div>
     </section>
 
-    <section id="news" className="mt-16 rounded-[20px] bg-[#f5ecdf] px-8 py-10 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
-      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-start">
-        <div className="space-y-6">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Editorial closing</p>
-          <h2 className="text-4xl font-[300] leading-tight text-[#12263f]">Лаконичное завершение истории.</h2>
-          <p className="max-w-xl text-base leading-8 text-[#12263f]/80">Каждый модуль этого пространства построен как страница каталога, где простор и эстетика объединяются в формат приватного ретрита.</p>
+    <section id="news" className="mt-16 rounded-[20px] px-8 py-28 text-[#12263f]">
+      <div className="grid gap-10 lg:grid-cols-2">
+        <div className="space-y-6 mb-16 col-span-1">
+          <p className="mb-8 font-normal text-[32px]">Что у нас нового</p>
+          <h2 className="text-[24px]">Подарочные карты</h2>
+          <p className="text-[16px] ">Подарок для чувств Подарите отдых, гастрономические впечатления или спа-процедуры. Это верный способ сказать «люблю тебя», «спасибо», «я скучаю» или «с днем рождения». Кого вы хотите порадовать?</p>
+          
         </div>
-        <div className="grid gap-6 sm:grid-cols-2">
-          <div className="rounded-[28px] bg-[#d9d1c2] p-6 shadow-[0_10px_30px_rgba(17,24,39,0.05)]">
-            <div className="h-56 rounded-[24px] bg-[#12263f]/10" />
+        <div className="grid grid-cols-5 items-center">
+          <div className="rounded-[5px] col-span-3 overflow-hidden aspect-[5/6]">
+            <img src={img1} alt="News 1" className="block w-full h-full object-cover rounded-[5px]" />
           </div>
-          <div className="grid gap-6">
-            <div className="rounded-[28px] bg-[#12263f]/10 p-6 shadow-[0_10px_30px_rgba(17,24,39,0.05)]">
-              <div className="h-40 rounded-[24px] bg-[#12263f]/10" />
-            </div>
-            <div className="rounded-[28px] bg-[#d9d1c2] p-6 shadow-[0_10px_30px_rgba(17,24,39,0.05)]">
-              <div className="h-28 rounded-[20px] bg-[#12263f]/10" />
-            </div>
+          <div className="rounded-[5px] col-span-2 overflow-hidden aspect-[5/6] relative">
+            <img
+              src={img2}
+              alt="News 2"
+              className="block w-full h-full object-cover rounded-[5px] filter blur-sm"
+            />
+            <div className="absolute inset-0 rounded-[5px] bg-[#FEFAE0]/30 pointer-events-none" />
           </div>
         </div>
       </div>
+      <div className="py-12"><button className="inline-flex items-center justify-center w-[270px] rounded-[5px] bg-[#1C3144] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90 ">
+            ОТПРВИТЬ ДАННЫЕ
+          </button>  
+          </div>
     </section>
     </div>
   )
