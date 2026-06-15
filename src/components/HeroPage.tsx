@@ -15,14 +15,14 @@ export default function Hero() {
   const searchInputRef = useRef<HTMLInputElement | null>(null)
   return (
     <div className="overflow-hidden rounded-[26px]">
-    <section id="hero" className="relative overflow-hidden rounded-[20px] bg-slate-900/5 shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
+    <section id="hero" className="relative overflow-hidden rounded-[20px] bg-slate-900/5 ">
       <div className="absolute inset-0">
         <img
           src={heroImage}
           className="h-full w-full object-cover object-center"
           alt="Retreat exterior"
         />
-        <div className="absolute inset-0 bg-[#12263f]/10" />
+        <div className="absolute inset-0 bg-[#1C3144]/10" />
       </div>
 
       <div className="relative z-10 min-h-[800px] px-8 py-20 pt-30 sm:px-12 sm:py-24 sm:pt-40 lg:px-16 lg:py-28 lg:pt-48">
@@ -41,7 +41,7 @@ export default function Hero() {
 
     </section>
     
-    <section id="about-us" className="mt-10 rounded-[20px] bg-[#1C3144] px-20 py-5 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
+    <section id="about-us" className="mt-10 rounded-[20px] bg-[#1C3144] px-20 py-5">
       <div className="mb-8 space-y-3 text-[#FEFAE0] font-normal text-[28px]">
         <h2>Заслужили доверие особыми <br />местами и сервисом</h2>
       </div>
@@ -66,21 +66,21 @@ export default function Hero() {
           <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
             <input
               type="text"
-              className="w-full bg-[#FEFAE0] rounded-[5px]  px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+              className="w-full bg-[#FEFAE0] rounded-[5px]  px-6 py-4 text-[16px] font-medium text-[#1C3144] outline-none placeholder:text-[#7c8898]"
               placeholder="Дата"
             />
           </label>
           <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
             <input
               type="text"
-              className="w-full bg-[#FEFAE0] rounded-[5px]  px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+              className="w-full bg-[#FEFAE0] rounded-[5px]  px-6 py-4 text-[16px] font-medium text-[#1C3144] outline-none placeholder:text-[#7c8898]"
               placeholder="Кол-во гостей"
             />
           </label>
           <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
             <input
               type="text"
-              className="w-full bg-[#FEFAE0] rounded-[5px]  px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+              className="w-full bg-[#FEFAE0] rounded-[5px]  px-6 py-4 text-[16px] font-medium text-[#1C3144] outline-none placeholder:text-[#7c8898]"
               placeholder="Пункт назначения"
             />
           </label>
@@ -91,7 +91,7 @@ export default function Hero() {
                 setShowSearchInput(true)
                 setTimeout(() => searchInputRef.current?.focus(), 0)
               }}
-              className="inline-flex h-12 w-12 items-center justify-center bg-transparent p-0 text-[#1C3144] transition hover:text-[#12263f] focus:outline-none"
+              className="inline-flex h-12 w-12 items-center justify-center bg-transparent p-0 text-[#1C3144] transition hover:text-[#1C3144] focus:outline-none"
               aria-label="search"
             >
               <img src={searchIcon} alt="search icon" className="h-15 w-15" />
@@ -109,7 +109,7 @@ export default function Hero() {
               </label>
             )}
           </div>
-          <button type="button" className="min-w-0 rounded-[5px] bg-[#1C3144] px-6 py-3 text-[20px] font-semibold text-[#FEFAE0] transition hover:bg-[#12263f] w-full">
+          <button type="button" className="min-w-0 rounded-[5px] bg-[#1C3144] px-6 py-3 text-[20px] font-semibold text-[#FEFAE0] transition hover:bg-[#1C3144] w-full">
             Найти
           </button>
         </div>
@@ -117,7 +117,7 @@ export default function Hero() {
     </section>
 
     <section id="best-offer" className="mt-12 rounded-[20px] bg-[#92ab79] p-10 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
-      <div className="text-[#12263f] flex items-center justify-between gap-8 mb-10 w-full">
+      <div className="text-[#1C3144] flex items-center justify-between gap-8 mb-10 w-full">
           <h2 className="text-[24px] miama">Саратовское водохранилище</h2>
           <p className="text-[20px] miama">Лучшее предложение</p>
           
@@ -128,11 +128,11 @@ export default function Hero() {
         <div className="lg:col-span-1 px-10">
           <div className="flex justify-end mb-20 -mr-20">
             <div className="w-[40px] h-[90px] bg-[#70161E]"></div>
-            <div className="w-[40px] h-[90px] bg-[#12263f]"></div>
+            <div className="w-[40px] h-[90px] bg-[#1C3144]"></div>
           </div>
           <div className="">
             <h2 className=" font-medium text-[#FEFAE0] text-[32px] serif-display ">Дом №337</h2>
-            <p className="text-[18px] font-light leading-8 text-[#FEFAE0] py-16">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
+            <p className="text-[18px] font-light leading-[1.15] text-[#FEFAE0] py-16">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
           </div>
           <div className="-ml-10 flex">
             <button className="inline-flex items-center justify-center w-[270px] rounded-tr-[5px] rounded-br-[5px] bg-[#1C3144] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
@@ -176,7 +176,7 @@ export default function Hero() {
 
       
     </section>
-
+    
     <section id="leisure" className="mt-20 rounded-[20px] px-20 py-12 ">
       <div className="mb-16  text-[#1C3144] font-medium text-[32px]">
         <h2>Досуг на территории</h2>
@@ -197,17 +197,14 @@ export default function Hero() {
 
         <div className="grid grid-cols-2 gap-20 py-12">
           <div className="col-span-1 space-y-4">
-            <p className="font-medium text-[20px]">Развлечение 1</p>
-            <p>Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
+            <p className="text-[16px]">Развлечение 1</p>
+            <p className="text-[18px] leading-[1.15]">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
           </div>
           <div className="col-span-1">
-            <div className="flex justify-content gap-6 mb-4">
-              <p className="font-medium text-[20px]">Цена</p>
-              <p>10000 руб.</p>
-            </div>
-            <div className="flex justify-content gap-6 mb-4">
-              <p className="font-medium text-[20px]">Локация</p>
-              <p>Книжный клуб</p>
+            
+            <div className="col-span-1 space-y-2">
+              <p className="text-[16px]">Локация</p>
+              <p className="text-[20px]">Книжный клуб</p>
             </div>
           </div>
         </div>
@@ -218,7 +215,7 @@ export default function Hero() {
         </div>
       </div>
     </section>
-
+    
     <section id="infrastructure" className="mt-10 rounded-[28px] px-20 py-12 ">
       <div className="mb-16 text-[#1C3144] font-medium text-[32px]">
         <p className="py-2">Инфраструктура комплексов</p>
@@ -248,7 +245,7 @@ export default function Hero() {
       </div>
     </section>
 
-    <section id="culinary" className="relative mt-16 rounded-[20px] bg-[#12263f] px-20 py-10 text-[#FEFAE0] ">
+    <section id="culinary" className="relative mt-16 rounded-[20px] bg-[#1C3144] px-20 py-10 text-[#FEFAE0] ">
       <img src={blue} alt="decor" className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 md:w-40" />
       <div className="grid lg:grid-cols-2 gap-10">
 
@@ -289,7 +286,7 @@ export default function Hero() {
     <section id="reserve" className="px-8 py-36 ">
       <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div className="">
-          <p className="mb-8 text-[#12263f] font-normal text-[28px]">Форма для упрощения выбора</p>
+          <p className="mb-8 text-[#1C3144] font-normal text-[28px]">Форма для упрощения выбора</p>
      
           <div className="flex flex-col gap-4 pl-16 text-[11px] ">
             <div className="flex items-center gap-4">
@@ -399,9 +396,9 @@ export default function Hero() {
             <img
               src={img2}
               alt="News 2"
-              className="block w-full h-full object-cover rounded-[5px] filter blur-sm"
+              className="block w-full h-full object-cover rounded-[5px] filter brightness-75 contrast-115 saturate-70 blur-[5px]"
             />
-            <div className="absolute inset-0 rounded-[5px] bg-[#FEFAE0]/30 pointer-events-none" />
+            <div className="absolute inset-0 rounded-[5px] bg-[#FEFAE0]/60 mix-blend-screen pointer-events-none" />
           </div>
         </div>
       </div>

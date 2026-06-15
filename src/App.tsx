@@ -9,7 +9,7 @@ import ph from "./assets/ph.png"
 export default function App() {
   return (
     <main
-      className="min-h-screen text-[#12263f]"
+      className="min-h-screen text-[#1C3144]"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundRepeat: "repeat-y",
@@ -49,7 +49,7 @@ export default function App() {
             <HeroPage />
           </div>
 
-          <footer className="mt-16 rounded-[0_0_22px_22px] bg-[#12263f] px-8 py-8 text-[#FEFAE0] shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
+          <footer className="mt-16 rounded-[0_0_22px_22px] bg-[#1C3144] px-8 py-8 text-[#FEFAE0] ">
           
             
           <div className="flex flex-wrap items-center gap-5 text-sm text-[#d9d1c2] md:justify-between">
