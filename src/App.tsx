@@ -75,7 +75,7 @@ export default function App() {
         </div>
         
         <div className="space-y-2 flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-center py-6">
-          <p className="text-sm text-[#1C3144] text-center">© 2026 Orchard House. All rights reserved.</p>
+          <p className="text-sm text-[#1C3144] text-center">© 2026 Отдых России. Все права защищены.</p>
         </div>
       </div>
     </main>
