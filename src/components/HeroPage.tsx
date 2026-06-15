@@ -283,70 +283,68 @@ export default function Hero() {
       </div>
     </section>
 
-    <section id="reserve" className="mt-16 rounded-[28px] bg-[#f8f1e7] px-8 py-10 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
+    <section id="reserve" className="px-8 py-36 ">
       <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
-        <div className="space-y-8">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Форма для упрощения выбора</p>
-          <div className="rounded-[28px] bg-[#12263f] p-8 shadow-[0_10px_30px_rgba(17,24,39,0.05)]">
-            <div className="flex flex-col gap-4 text-[11px]">
-              <div className="flex items-center gap-4">
-                <p className="font-normal text-[#FEFAE0] text-[48px]">6</p>
-                <p className="text-[#FEFAE0] font-light text-[16px]">Лет единый уровень <br /> сервиса</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <p className="font-normal text-[#FEFAE0] text-[48px]">5.0</p>
-                <p className="text-[#FEFAE0] font-light text-[16px]">Средняя оценка наших <br /> гостей</p>
-              </div>
+        <div className="">
+          <p className="mb-8 text-[#12263f] font-normal text-[28px]">Форма для упрощения выбора</p>
+     
+          <div className="flex flex-col gap-4 pl-16 text-[11px] ">
+            <div className="flex items-center gap-4">
+              <p className="font-normal  text-[52px]">24</p>
+              <p className=" font-normal text-[16px]">Часа в сутки готовы ответить <br /> на вопросы</p>
+            </div>
+            <div className="flex items-center gap-4">
+              <p className="font-normal  text-[52px]">10</p>
+              <p className=" font-normal text-[16px]">Минут средняя длина решения <br />по месту отдыха с попаданием <br />в  потребность</p>
             </div>
           </div>
         </div>
-        <form className="space-y-6 rounded-[28px] bg-white p-8 shadow-[0_10px_30px_rgba(17,24,39,0.05)]">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-[#12263f]/70">Enquiry</p>
-          <h3 className="text-3xl font-[300] text-[#12263f]">Запрос на бронирование</h3>
-          <div className="space-y-4">
-            <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
+        <form className="space-y-6 p-6 ">
+          
+          <div className="space-y-2">
+            <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Фамилия Имя</span>
               <input
                 type="text"
-                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f]"
                 placeholder="Фамилия Имя"
               />
             </label>
-            <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
+            <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Номер телефона</span>
               <input
                 type="tel"
-                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f]"
                 placeholder="Номер телефона"
               />
             </label>
-            <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
+            <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Город назначения</span>
               <input
                 type="text"
-                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f]"
                 placeholder="Город назначения"
               />
             </label>
-            <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
+            <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Дата</span>
               <input
                 type="text"
-                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f]"
                 placeholder="Дата"
               />
             </label>
-            <label className="min-w-0 rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
+            <label className="min-w-0 block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Время для связи</span>
               <input
                 type="text"
-                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[16px] font-medium text-[#12263f] outline-none placeholder:text-[#7c8898]"
+                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f]"
                 placeholder="Время для связи"
               />
             </label>
           </div>
-          <button className="inline-flex w-full items-center justify-center rounded-md bg-[#70161E] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#FEFAE0] transition duration-300 hover:opacity-90">
-            Отправить запрос
+          <button className="inline-flex items-center justify-center w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+            отправить запрос
           </button>
         </form>
       </div>
