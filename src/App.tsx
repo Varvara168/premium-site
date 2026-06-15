@@ -1,6 +1,10 @@
 ﻿import HeroPage from "./components/HeroPage"
 import backgroundImage from "./assets/background.png"
 import icon from "./assets/icon.svg"
+import yt from "./assets/yt.png"
+import tg from "./assets/tg.png"
+import vk from "./assets/vk.png"
+import ph from "./assets/ph.png"
 
 export default function App() {
   return (
@@ -63,19 +67,32 @@ export default function App() {
                 <a href="" >Жилой фонд</a>
               </div>
             </div>
-            <div className="flex flex-col gap-3 md:flex-row md:items-center ">
-              <span>Yt</span>
-              <span>Tg</span>              
-              <span>Vk</span>
-              <span>Ph</span>
+            <div className="flex flex-col gap-2 md:flex-row md:items-center ">
+              <a href="" >
+                <img src={ph} alt="Phone" className="h-6 w-6 object-contain" />
+              </a>
+              <a href="" >
+                <img src={yt} alt="YouTube" className="h-6 w-6 object-contain" />
+              </a>
+              <a href="" >
+                <img src={tg} alt="Telegram" className="h-6 w-6 object-contain" />
+              </a>
+              <a href="" >
+                <img src={vk} alt="VK" className="h-6 w-6 object-contain" />
+              </a>
             </div>
           </div>
         </footer>
           
         </div>
         
-        <div className="space-y-2 flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-center py-6">
-          <p className="text-sm text-[#1C3144] text-center">© 2026 Отдых России. Все права защищены.</p>
+        <div className="flex items-center justify-center gap-6 py-6">
+          <a href="">
+            <p className="text-sm text-[#1C3144]">© 2026 Отдых России. Все права защищены.</p>
+          </a>
+          <a href="">
+            <p className="text-sm text-[#1C3144]">Политика конфиденциальности</p>
+          </a>
         </div>
       </div>
     </main>
