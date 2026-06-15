@@ -132,7 +132,7 @@ export default function Hero() {
           </div>
           <div className="">
             <h2 className=" font-medium text-[#FEFAE0] text-[32px] serif-display ">Дом №337</h2>
-            <p className="text-[18px] font-light leading-[1.15] text-[#FEFAE0] py-16">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
+            <p className="text-[16px] font-light text-[#FEFAE0] py-16">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
           </div>
           <div className="-ml-10 flex">
             <button className="inline-flex items-center justify-center w-[270px] rounded-tr-[5px] rounded-br-[5px] bg-[#1C3144] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
@@ -198,7 +198,7 @@ export default function Hero() {
         <div className="grid grid-cols-2 gap-20 py-12">
           <div className="col-span-1 space-y-4">
             <p className="text-[16px]">Развлечение 1</p>
-            <p className="text-[18px] leading-[1.15]">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
+            <p className="text-[18px] ">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
           </div>
           <div className="col-span-1">
             
@@ -403,7 +403,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="py-12"><button className="inline-flex items-center justify-center w-[270px] rounded-[5px] bg-[#1C3144] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90 ">
-            ОТПРВИТЬ ДАННЫЕ
+            ОТПРАВИТЬ ДАННЫЕ
           </button>  
           </div>
     </section>
