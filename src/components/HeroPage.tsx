@@ -326,14 +326,6 @@ export default function Hero() {
                 placeholder="Город назначения"
               />
             </label>
-            <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
-              <span className="sr-only">Дата</span>
-              <input
-                type="text"
-                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f]"
-                placeholder="Дата"
-              />
-            </label>
             <label className="min-w-0 block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Время для связи</span>
               <input
