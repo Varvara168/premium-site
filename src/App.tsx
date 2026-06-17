@@ -1,4 +1,5 @@
-﻿import HeroPage from "./components/HeroPage"
+﻿import { useState, useEffect } from "react"
+import HeroPage from "./components/HeroPage"
 import backgroundImage from "./assets/background.png"
 import icon from "./assets/icon.svg"
 import yt from "./assets/yt.png"
@@ -7,6 +8,15 @@ import vk from "./assets/vk.png"
 import ph from "./assets/ph.png"
 
 export default function App() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto"
+    return () => {
+      document.body.style.overflow = "auto"
+    }
+  }, [menuOpen])
+
   return (
     <main
       className="min-h-screen text-[#1C3144]"
@@ -18,12 +28,12 @@ export default function App() {
         backgroundColor: "#FEFAE0",
       }}
     >
-      <div className="mx-auto max-w-[1040px] px-6 pb-24">
-        <header className="sticky top-0 z-40 rounded-b-[30px] bg-[#1C3144] px-8 py-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="flex items-center gap-1">
+      <div className="mx-auto max-w-[1040px] px-0 sm:px-6 pb-24">
+        <header className="sticky top-0 z-40 rounded-b-[30px] bg-[#1C3144] px-4 sm:px-8 py-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
               <img src={icon} alt="Orchard House logo" className="h-11 w-11 object-contain" />
-              <div>
+              <div className="hidden md:block">
                 <p className="font-semibold text-[#70161E] text-[20px] leading-5">ОТДЫХ <br />РОССИИ</p>
               </div>
             </div>
@@ -36,16 +46,64 @@ export default function App() {
               <a href="#reserve" className="transition hover:text-[#FEFAE0]">Отзывы</a>
               <a href="#reserve" className="transition hover:text-[#FEFAE0]">Контакты</a>
             </nav>
-            
-            
-            <a href="#reserve" className="inline-flex items-center justify-center rounded-md bg-[#70161E] px-12 py-3 text-[14px] font-regular tracking-[0.1em] uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
-              Забронировать
-            </a>
+
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                className={`md:hidden inline-flex h-10 w-10 items-center justify-center rounded-[5px] ${menuOpen ? 'bg-transparent' : 'bg-[#70161E]'}`}
+                onClick={() => setMenuOpen((s) => !s)}
+                aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
+                aria-expanded={menuOpen}
+              >
+                {!menuOpen ? (
+                  <span className="flex flex-col justify-center gap-1">
+                    <span className="block h-[2px] w-5 bg-[#1C3144] rounded-sm" />
+                    <span className="block h-[2px] w-5 bg-[#1C3144] rounded-sm" />
+                    <span className="block h-[2px] w-5 bg-[#1C3144] rounded-sm" />
+                  </span>
+                ) : (
+                  <span className="relative block w-5 h-5">
+                    <span className="absolute inset-0 m-auto block h-[2px] w-5 bg-[#FEFAE0] rotate-45" />
+                    <span className="absolute inset-0 m-auto block h-[2px] w-5 bg-[#FEFAE0] -rotate-45" />
+                  </span>
+                )}
+              </button>
+
+              <a href="#reserve" className="hidden md:inline-flex items-center justify-center rounded-md bg-[#70161E] px-12 py-3 text-[14px] font-regular tracking-[0.1em] uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+                Забронировать
+              </a>
+            </div>
           </div>
         </header>
 
-        <div className="mt-10 rounded-[30px] border-[3px] border-[#1C3144]">
-          <div className="overflow-hidden rounded-[26px]">
+        {menuOpen && (
+          <div className="fixed inset-0 z-50 bg-[#1C3144] text-[#FEFAE0] flex flex-col items-center justify-center gap-6 p-6">
+            <button
+              type="button"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Закрыть меню"
+              className="absolute top-6 right-6 inline-flex h-10 w-10 items-center justify-center rounded-[5px] bg-transparent"
+            >
+              <span className="relative block w-5 h-5">
+                <span className="absolute inset-0 m-auto block h-[2px] w-5 bg-[#FEFAE0] rotate-45" />
+                <span className="absolute inset-0 m-auto block h-[2px] w-5 bg-[#FEFAE0] -rotate-45" />
+              </span>
+            </button>
+            <a href="#experience" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Жилой фонд</a>
+            <a href="#benefits" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Баня</a>
+            <a href="#culinary" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Досуг</a>
+            <a href="#reserve" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Сервис</a>
+            <a href="#reserve" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Отзывы</a>
+            <a href="#reserve" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Контакты</a>
+
+            <a href="#reserve" onClick={() => setMenuOpen(false)} className="mt-4 inline-flex items-center justify-center rounded-md bg-[#70161E] px-12 py-3 text-[16px] font-regular uppercase text-[#FEFAE0]">
+              Забронировать
+            </a>
+          </div>
+        )}
+
+        <div className="mt-10 rounded-[0px] sm:rounded-[30px] sm:border-[3px] sm:border-[#1C3144] w-full">
+          <div className="overflow-hidden rounded-[0px] sm:rounded-[26px]">
             <HeroPage />
           </div>
 

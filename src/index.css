@@ -16,7 +16,8 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  /* support both light and dark UAs to avoid unintended color remapping */
+  color-scheme: light dark;
 }
 
 * {
