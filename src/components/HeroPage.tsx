@@ -148,20 +148,20 @@ export default function Hero() {
       </div>
     </section>
 
-    <section id="best-offer" className="mt-12 rounded-[20px] bg-[#92ab79] p-6 sm:p-10 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
+    <section id="best-offer" className="mt-12 rounded-[20px] bg-[#92ab79] px-8 py-14 sm:p-10 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
       <div className="text-[#1C3144] flex items-center justify-between gap-8 mb-10 w-full">
           <h2 className="text-[24px] miama">Саратовское водохранилище</h2>
           <p className="text-[20px] miama">Лучшее предложение</p>
           
       </div>
-      <div className="grid gap-10 lg:grid-cols-3 -mx-10 items-start">
+      <div className="grid gap-10 lg:grid-cols-3 lg:-mx-10 items-start">
         
         
-        <div className="lg:col-span-1 px-10">
-          <div className="flex justify-end mb-20 -mr-20">
-            <div className="w-[40px] h-[90px] bg-[#70161E]"></div>
-            <div className="w-[40px] h-[90px] bg-[#1C3144]"></div>
-          </div>
+        <div className="lg:col-span-1 px-10 hidden lg:block">
+          <div className="hidden md:flex justify-end mb-20 -mr-20">
+              <div className="w-[40px] h-[90px] bg-[#70161E]"></div>
+              <div className="w-[40px] h-[90px] bg-[#1C3144]"></div>
+            </div>
           <div className="">
             <h2 className=" font-medium text-[#FEFAE0] text-[32px] serif-display ">Дом №337</h2>
             <p className="text-[16px] font-light text-[#FEFAE0] py-16">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
@@ -198,10 +198,24 @@ export default function Hero() {
               <img src={house337} alt="House 337 - wide" className="block w-full h-full object-cover" />
             </div>
           </div>
+          {/* Mobile: move description + button under images */}
+          <div className="lg:hidden px-4 mt-6">
+            <div className="">
+              <h2 className="font-medium text-[#FEFAE0] text-[32px] serif-display">Дом №337</h2>
+              <p className="text-[16px] font-light text-[#FEFAE0] py-4">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
+            </div>
+            <div className="flex justify-center mt-2">
+              <button aria-label="Подробнее" className="inline-flex items-center justify-center w-12 h-12 rounded-[5px] bg-[#1C3144] text-[#FEFAE0] transition duration-300 hover:opacity-90">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
         <div className="col-span-3 flex justify-center py-4">
           <button className="inline-flex items-center justify-center w-full sm:w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
-            все дома
+            ВСЕ ДОМА
           </button>
         </div>
       </div>
