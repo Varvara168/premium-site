@@ -9,6 +9,7 @@ import culinary from "../assets/image326.png"
 import map from "../assets/map.png"
 import img1 from "../assets/1_png.png"
 import img2 from "../assets/2_png.png"
+import liesure from "../assets/image 158.png"
 
 export default function Hero() {
   const [showSearchInput, setShowSearchInput] = useState(false)
@@ -148,13 +149,13 @@ export default function Hero() {
       </div>
     </section>
 
-    <section id="best-offer" className="mt-12 rounded-[20px] bg-[#92ab79] px-8 py-14 sm:p-10 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
+    <section id="best-offer" className="mt-12 rounded-[20px] bg-[#92ab79] px-8 py-14 sm:px-20 sm:py-8 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
       <div className="text-[#1C3144] flex items-center justify-between gap-8 mb-10 w-full">
           <h2 className="text-[24px] miama">Саратовское водохранилище</h2>
           <p className="text-[20px] miama">Лучшее предложение</p>
           
       </div>
-      <div className="grid gap-10 lg:grid-cols-3 lg:-mx-10 items-start">
+      <div className="grid gap-10 lg:grid-cols-3 items-start">
         
         
         <div className="lg:col-span-1 px-10 hidden lg:block">
@@ -229,14 +230,14 @@ export default function Hero() {
       </div>
       <div className="">
         
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 sm:-gap-20 mt-6 sm:-mx-40 items-center">
-          <div className="overflow-hidden rounded-[5px] col-span-1 aspect-[3/2]">
+        <div className="grid grid-cols-1 sm:grid-cols-4 sm:-gap-20 mt-6 sm:-mx-40 gap-4 justify-items-center gap-x-0 mt-6 items-center">
+          <div className="hidden sm:block overflow-hidden rounded-[5px] col-span-1 aspect-[3/2]">
             <img src={house337} alt="House 337 - 2" className="block w-full h-full object-cover" />
           </div>
-          <div className="overflow-hidden rounded-[5px] col-span-2 aspect-[3/2]">
-            <img src={house337} alt="House 337 - 1" className="block w-full h-full object-cover" />
+          <div className="overflow-hidden rounded-[5px] col-span-1 sm:col-span-2 aspect-[3/4] sm:aspect-[3/2]">
+            <img src={liesure} alt="House 337 - 1" className="block w-full h-full object-cover" />
           </div>
-          <div className="overflow-hidden rounded-[5px] col-span-1 aspect-[3/2]">
+          <div className="hidden sm:block overflow-hidden rounded-[5px] col-span-1 aspect-[3/2]">
             <img src={house337} alt="House 337 - 3" className="block w-full h-full object-cover" />
           </div>
         </div>
@@ -291,15 +292,15 @@ export default function Hero() {
       </div>
     </section>
 
-    <section id="culinary" className="relative mt-16 rounded-[20px] bg-[#1C3144] px-6 sm:px-20 py-10 text-[#FEFAE0] ">
+    <section id="culinary" className="relative mt-16 rounded-[20px] bg-[#1C3144] px-6  sm:px-20 py-10 text-[#FEFAE0] ">
       <img src={blue} alt="decor" className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 md:w-40" />
       <div className="grid lg:grid-cols-2 gap-10">
 
-        <div className="overflow-hidden rounded-tr-[5px] rounded-br-[5px] col-span-1 aspect-[4/3] -ml-0 sm:-ml-20">
+        <div className="overflow-hidden sm:rounded-tr-[5px] sm:rounded-br-[5px] rounded-[5px] col-span-1 aspect-[4/3] -mx-6 sm:-ml-20">
           <img src={culinary} alt="House 337 - 1" className="block w-full h-full object-cover" />
         </div>
         
-        <div className="py-8"> 
+        <div className="sm:py-8 space-y-4"> 
           <h2 className="text-[18px] leading-tight miama text-[#FEFAE0]">Фермерские продукты и простая еда натуральный вкус региона</h2>
           <div className="py-8">
             <div className="space-y-4">
