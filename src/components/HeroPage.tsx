@@ -296,7 +296,7 @@ export default function Hero() {
       <img src={blue} alt="decor" className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 md:w-40" />
       <div className="grid lg:grid-cols-2 gap-10">
 
-        <div className="overflow-hidden sm:rounded-tr-[5px] sm:rounded-br-[5px] rounded-[5px] col-span-1 aspect-[4/3] -mx-6 sm:-ml-20">
+        <div className="overflow-hidden sm:rounded-tr-[5px] sm:rounded-br-[5px] rounded-[5px] lg:rounded-none lg:rounded-tr-[5px] lg:rounded-br-[5px] col-span-1 aspect-[4/3] -mx-6 sm:-ml-20">
           <img src={culinary} alt="House 337 - 1" className="block w-full h-full object-cover" />
         </div>
         
