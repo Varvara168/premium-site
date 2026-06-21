@@ -259,11 +259,11 @@ export default function Hero() {
       
     </section>
     
-    <section id="leisure" className="mt-20 rounded-[20px] px-8 sm:px-20 py-12 ">
+    <section id="leisure" className="mt-20 rounded-[20px] px-8 sm:px-20 py-12 overflow-hidden">
       <div className="sm:mb-16 mb-10 text-[#1C3144] font-medium text-[28px] sm:text-[32px]">
         <h2>Досуг на территории</h2>
       </div>
-      <div className="mx-auto w-full">
+      <div className="">
         
         <div className="grid grid-cols-1 sm:grid-cols-4 sm:-gap-20 mt-6 sm:-mx-40 gap-4 justify-items-center gap-x-0 mt-6 items-center">
           <div className="hidden sm:block overflow-hidden rounded-[5px] col-span-1 aspect-[3/2]">
@@ -352,7 +352,7 @@ export default function Hero() {
           <img src={culinary} alt="House 337 - 1" className="block w-full h-full object-cover" />
         </div>
         
-        <div className="sm:py-8 space-y-4"> 
+        <div className="sm:py-8 sm:ml-6 space-y-4"> 
           <h2 className="text-[18px] leading-tight miama text-[#FEFAE0]">Фермерские продукты и простая еда натуральный вкус региона</h2>
           <div className="py-8">
             <div className="space-y-4">
