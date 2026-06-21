@@ -182,7 +182,7 @@ export default function Hero() {
     </section>
 
     <section ref={sectionRef} id="best-offer" className="mt-12 rounded-[20px] bg-[#92ab79] px-8 py-14 sm:px-20 sm:py-8 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
-      <div ref={headerRef} className={`${headerSticky ? 'lg:sticky lg:top-20' : ''} lg:py-8 lg:z-20 lg:-mx-20 lg:bg-[#92ab79] lg:rounded-t-[20px]`}>
+      <div ref={headerRef} className={`hidden lg:block ${headerSticky ? 'lg:sticky lg:top-20' : ''} lg:py-8 lg:z-20 lg:-mx-20 lg:bg-[#92ab79] lg:rounded-t-[20px]`}>
         <div className="text-[#1C3144] flex items-center justify-between gap-x-8 w-full px-8 lg:px-20">
           <h2 className="text-[24px] miama">Саратовское водохранилище</h2>
           <p className="text-[20px] miama">Лучшее предложение</p>
@@ -210,42 +210,77 @@ export default function Hero() {
           
         </div>
 
-        <div className="lg:col-span-2">
-          <div className="overflow-hidden rounded-[5px] lg:rounded-none w-full h-[300px] sm:h-[500px] lg:h-[800px] max-w-full">
-            <img
-              src={house337}
-              alt="House 337"
-              className="block w-full h-full object-cover"
-            />
-          </div>
+        <div className="sm:lg:col-span-2">
+          <div className="hidden lg:block">
+            <div className="overflow-hidden rounded-[5px] lg:rounded-none w-full h-[300px] sm:h-[500px] lg:h-[800px] max-w-full">
+              <img
+                src={house337}
+                alt="House 337"
+                className="block w-full h-full object-cover"
+              />
+            </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-6">
-            <div className="overflow-hidden rounded-[5px] col-span-2 aspect-[3/4]">
-              <img src={house337} alt="House 337 - 1" className="block w-full h-full object-cover" />
-            </div> 
-            <div className="overflow-hidden rounded-[5px] col-span-1 aspect-[3/4]">
-              <img src={house337} alt="House 337 - 2" className="block w-full h-full object-cover" />
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-6">
+              <div className="overflow-hidden rounded-[5px] col-span-2 aspect-[3/4]">
+                <img src={house337} alt="House 337 - 1" className="block w-full h-full object-cover" />
+              </div>
+              <div className="overflow-hidden rounded-[5px] col-span-1 aspect-[3/4]">
+                <img src={house337} alt="House 337 - 2" className="block w-full h-full object-cover" />
+              </div>
             </div>
-          </div>
 
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-8 gap-6 items-center">
-            <div className="col-span-1" />
-            <div className="col-span-1 sm:col-span-7 overflow-hidden rounded-[5px] aspect-[6/3]">
-              <img src={house337} alt="House 337 - wide" className="block w-full h-full object-cover" />
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-8 gap-6 items-center">
+              <div className="col-span-1" />
+              <div className="col-span-1 sm:col-span-7 overflow-hidden rounded-[5px] aspect-[6/3]">
+                <img src={house337} alt="House 337 - wide" className="block w-full h-full object-cover" />
+              </div>
             </div>
           </div>
-          {/* Mobile: move description + button under images */}
-          <div className="lg:hidden px-4 mt-6">
-            <div className="">
-              <h2 className="font-medium text-[#FEFAE0] text-[32px] serif-display">Дом №337</h2>
-              <p className="text-[16px] font-light text-[#FEFAE0] py-4">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
+          {/* Mobile: custom layout per spec (6-column grid) */}
+          <div className="block lg:hidden w-full mt-6">
+            <div className="text-center">
+              <h2 className="font-medium text-[#FEFAE0] text-[28px] serif-display">Дом №337</h2>
             </div>
-            <div className="flex justify-center mt-2">
-              <button aria-label="Подробнее" className="inline-flex items-center justify-center w-12 h-12 rounded-[5px] bg-[#1C3144] text-[#FEFAE0] transition duration-300 hover:opacity-90">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 5l7 7-7 7" />
-                </svg>
+
+            <div className="flex items-center justify-between mt-3 px-2">
+              <div className="w-6 h-6" />
+              <p className="text-[16px] font-medium miama text-[#1C3144]">Саратовское водохранилище</p>
+              <button
+                type="button"
+                className="inline-flex items-center justify-center p-2 bg-transparent"
+                aria-label="search"
+              >
+                <img src={searchIcon} alt="search" className="h-5 w-5" />
               </button>
+            </div>
+
+            <div className="grid grid-cols-6 gap-2 mt-4">
+              <div className="col-span-6 overflow-hidden rounded-[5px] aspect-[3/4]">
+                <img src={house337} alt="House 337 - full" className="block w-full h-full object-cover" />
+              </div>
+
+              <div className="col-span-2 overflow-hidden rounded-[5px] aspect-[3/4]">
+                <img src={liesure} alt="Leisure - left" className="block w-full h-full object-cover" />
+              </div>
+
+              <div className="col-start-2 col-span-5 overflow-hidden rounded-[5px] aspect-[3/4]">
+                <img src={house337} alt="House 337 - offset" className="block w-full h-full object-cover" />
+              </div>
+
+              <div className="col-span-6 overflow-hidden rounded-[5px] aspect-[6/3]">
+                <img src={house337} alt="House 337 - wide" className="block w-full h-full object-cover" />
+              </div>
+            </div>
+
+            <div className="mt-4">
+              <p className="text-[16px] font-light text-[#FEFAE0]">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
+              <div className="flex justify-end mt-3">
+                <button aria-label="Подробнее" className="inline-flex items-center justify-center w-12 h-12 rounded-[5px] bg-[#1C3144] text-[#FEFAE0] transition duration-300 hover:opacity-90">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
