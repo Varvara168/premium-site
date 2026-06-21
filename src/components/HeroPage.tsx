@@ -21,7 +21,6 @@ export default function Hero() {
   const [headerSticky, setHeaderSticky] = useState(true)
 
   useEffect(() => {
-    const offsetFromBottom = 40 // px — adjust if you want more/less gap from section bottom
     function calc() {
       if (typeof window === 'undefined') return
       if (window.innerWidth < 1024) {
@@ -36,12 +35,9 @@ export default function Hero() {
       }
       const leftRect = left.getBoundingClientRect()
       const sectionRect = section.getBoundingClientRect()
-      const leftHeight = left.offsetHeight || (leftRect.bottom - leftRect.top)
-      const leftBottomDocument = leftRect.top + window.scrollY + leftHeight
-      const sectionBottomDocument = sectionRect.top + window.scrollY + (section.offsetHeight || (sectionRect.bottom - sectionRect.top))
-        const contentHeight = left.scrollHeight || left.offsetHeight || leftRect.height
-        const bottomGap = 40 // px gap from section bottom before we unstick
-        const reachedEnd = (leftRect.top + contentHeight) >= (sectionRect.bottom - bottomGap)
+      const contentHeight = left.scrollHeight || left.offsetHeight || leftRect.height
+      const bottomGap = 40 // px gap from section bottom before we unstick
+      const reachedEnd = (leftRect.top + contentHeight) >= (sectionRect.bottom - bottomGap)
       setHeaderSticky(!reachedEnd)
     }
     calc()
