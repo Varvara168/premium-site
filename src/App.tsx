@@ -105,7 +105,7 @@ export default function App() {
         )}
 
         <div className="mt-10 rounded-[0px] sm:rounded-[30px] sm:border-[3px] sm:border-[#1C3144] w-full">
-          <div className="overflow-hidden rounded-[0px] sm:rounded-[26px]">
+          <div className="rounded-[0px] sm:rounded-[26px] overflow-visible">
             <HeroPage />
           </div>
 

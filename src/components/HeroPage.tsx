@@ -1,4 +1,4 @@
-﻿import { useRef, useState } from "react"
+﻿import { useRef, useState, useEffect } from "react"
 import heroImage from "../assets/hero.png"
 import searchIcon from "../assets/search.png"
 import house337 from "../assets/house337.png"
@@ -14,8 +14,46 @@ import liesure from "../assets/image 158.png"
 export default function Hero() {
   const [showSearchInput, setShowSearchInput] = useState(false)
   const searchInputRef = useRef<HTMLInputElement | null>(null)
+
+  const headerRef = useRef<HTMLDivElement | null>(null)
+  const leftColRef = useRef<HTMLDivElement | null>(null)
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const [headerSticky, setHeaderSticky] = useState(true)
+
+  useEffect(() => {
+    const offsetFromBottom = 40 // px — adjust if you want more/less gap from section bottom
+    function calc() {
+      if (typeof window === 'undefined') return
+      if (window.innerWidth < 1024) {
+        setHeaderSticky(true)
+        return
+      }
+      const left = leftColRef.current
+      const section = sectionRef.current
+      if (!left || !section) {
+        setHeaderSticky(true)
+        return
+      }
+      const leftRect = left.getBoundingClientRect()
+      const sectionRect = section.getBoundingClientRect()
+      const leftHeight = left.offsetHeight || (leftRect.bottom - leftRect.top)
+      const leftBottomDocument = leftRect.top + window.scrollY + leftHeight
+      const sectionBottomDocument = sectionRect.top + window.scrollY + (section.offsetHeight || (sectionRect.bottom - sectionRect.top))
+        const contentHeight = left.scrollHeight || left.offsetHeight || leftRect.height
+        const bottomGap = 40 // px gap from section bottom before we unstick
+        const reachedEnd = (leftRect.top + contentHeight) >= (sectionRect.bottom - bottomGap)
+      setHeaderSticky(!reachedEnd)
+    }
+    calc()
+    window.addEventListener('scroll', calc, { passive: true })
+    window.addEventListener('resize', calc)
+    return () => {
+      window.removeEventListener('scroll', calc)
+      window.removeEventListener('resize', calc)
+    }
+  }, [])
   return (
-    <div className="overflow-hidden rounded-[26px]">
+    <div className="rounded-[26px] overflow-visible">
     <section id="hero" className="relative overflow-hidden rounded-[20px] bg-slate-900/5 ">
       <div className="absolute inset-0">
         <img
@@ -42,7 +80,6 @@ export default function Hero() {
 
     </section>
 
-    
     <section id="about-us" className="mt-10 rounded-[20px] bg-[#1C3144] px-8 py-14 sm:px-20 sm:py-8">
       <div className="mb-8 space-y-3 text-[#FEFAE0] font-normal text-[24px] sm:text-[28px]">
         <h2>Заслужили доверие особыми <br />местами и сервисом</h2>
@@ -144,26 +181,29 @@ export default function Hero() {
       </div>
     </section>
 
-    <section id="best-offer" className="mt-12 rounded-[20px] bg-[#92ab79] px-8 py-14 sm:px-20 sm:py-8 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
-      <div className="text-[#1C3144] flex items-center justify-between gap-8 mb-10 w-full">
+    <section ref={sectionRef} id="best-offer" className="mt-12 rounded-[20px] bg-[#92ab79] px-8 py-14 sm:px-20 sm:py-8 shadow-[0_10px_40px_rgba(17,24,39,0.05)]">
+      <div ref={headerRef} className={`${headerSticky ? 'lg:sticky lg:top-20' : ''} lg:py-8 lg:z-20 lg:-mx-20 lg:bg-[#92ab79] lg:rounded-t-[20px]`}>
+        <div className="text-[#1C3144] flex items-center justify-between gap-x-8 w-full px-8 lg:px-20">
           <h2 className="text-[24px] miama">Саратовское водохранилище</h2>
           <p className="text-[20px] miama">Лучшее предложение</p>
-          
+        </div>
       </div>
+
       <div className="grid gap-10 lg:grid-cols-3 items-start">
-        
-        
-        <div className="lg:col-span-1 px-10 hidden lg:block">
+        <div
+          ref={leftColRef}
+          className="lg:col-span-1 px-10 hidden lg:block lg:sticky lg:self-start lg:z-10 lg:top-44"
+        >
           <div className="hidden md:flex justify-end mb-20 -mr-20">
               <div className="w-[40px] h-[90px] bg-[#70161E]"></div>
               <div className="w-[40px] h-[90px] bg-[#1C3144]"></div>
             </div>
-          <div className="">
+          <div className="-ml-10 ">
             <h2 className=" font-medium text-[#FEFAE0] text-[32px] serif-display ">Дом №337</h2>
             <p className="text-[16px] font-light text-[#FEFAE0] py-16">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
           </div>
           <div className="-ml-10 flex">
-            <button className="inline-flex items-center justify-center w-[270px] rounded-tr-[5px] rounded-br-[5px] bg-[#1C3144] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+            <button className="inline-flex items-center justify-center w-[270px] rounded-tr-[5px] mb-4 rounded-br-[5px] bg-[#1C3144] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
               подробнее
             </button>
           </div>
@@ -179,7 +219,7 @@ export default function Hero() {
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-6">
             <div className="overflow-hidden rounded-[5px] col-span-2 aspect-[3/4]">
               <img src={house337} alt="House 337 - 1" className="block w-full h-full object-cover" />
             </div> 
@@ -223,7 +263,7 @@ export default function Hero() {
       <div className="sm:mb-16 mb-10 text-[#1C3144] font-medium text-[28px] sm:text-[32px]">
         <h2>Досуг на территории</h2>
       </div>
-      <div className="">
+      <div className="mx-auto w-full">
         
         <div className="grid grid-cols-1 sm:grid-cols-4 sm:-gap-20 mt-6 sm:-mx-40 gap-4 justify-items-center gap-x-0 mt-6 items-center">
           <div className="hidden sm:block overflow-hidden rounded-[5px] col-span-1 aspect-[3/2]">
