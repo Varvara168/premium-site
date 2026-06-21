@@ -189,7 +189,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="grid gap-10 lg:grid-cols-3 items-start">
+      <div className="grid gap-0 lg:gap-10 lg:grid-cols-3 items-start">
         <div
           ref={leftColRef}
           className="lg:col-span-1 px-10 hidden lg:block lg:sticky lg:self-start lg:z-10 lg:top-44"
@@ -243,7 +243,7 @@ export default function Hero() {
             <h2 className="font-medium text-[#FEFAE0] text-[28px] serif-display">Дом №337</h2>
           </div>
 
-          <div className="flex items-center justify-between mt-3 px-2">
+          <div className="flex items-center justify-between mt-3 ">
             <div className="w-6 h-6" />
             <p className="text-[16px] font-medium miama text-[#1C3144]">Саратовское водохранилище</p>
             <button
@@ -260,8 +260,8 @@ export default function Hero() {
               <img src={house337} alt="House 337 - full" className="block w-full h-full object-cover" />
             </div>
 
-            <div className="col-span-2 overflow-hidden rounded-[5px] aspect-[3/4]">
-              <img src={liesure} alt="Leisure - left" className="block w-full h-full object-cover" />
+            <div className="col-span-3 overflow-hidden rounded-[5px] aspect-[3/4]">
+              <img src={house337} alt="Leisure - left" className="block w-full h-full object-cover" />
             </div>
 
             <div className="col-start-2 col-span-5 overflow-hidden rounded-[5px] aspect-[3/4]">
