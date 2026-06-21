@@ -29,7 +29,7 @@ export default function App() {
       }}
     >
       <div className="mx-auto max-w-[1040px] px-0 sm:px-6 pb-0 md:pb-24">
-        <header className="sticky top-0 z-40 rounded-b-[30px] bg-[#1C3144] px-4 sm:px-8 py-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+        <header className="sticky top-0 z-40 rounded-b-[15px] sm:rounded-b-[30px] bg-[#1C3144] px-8 sm:px-8 py-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img src={icon} alt="Orchard House logo" className="h-11 w-11 object-contain" />
@@ -93,8 +93,10 @@ export default function App() {
             <a href="#benefits" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Баня</a>
             <a href="#culinary" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Досуг</a>
             <a href="#reserve" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Сервис</a>
-            <a href="#reserve" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Отзывы</a>
-            <a href="#reserve" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Контакты</a>
+            <a href="#reviews" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Отзывы</a>
+            <a href="#about" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">О нас</a>
+            <a href="#cooperation" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Сотрудничество</a>
+            <a href="#contacts" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Контакты</a>
 
             <a href="#reserve" onClick={() => setMenuOpen(false)} className="mt-4 inline-flex items-center justify-center rounded-md bg-[#70161E] px-12 py-3 text-[16px] font-regular uppercase text-[#FEFAE0]">
               Забронировать

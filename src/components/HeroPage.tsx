@@ -26,14 +26,14 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[#1C3144]/10" />
       </div>
 
-      <div className="relative z-10 min-h-[520px] px-6 py-12 sm:px-12 sm:py-20 md:min-h-[800px] lg:px-16 lg:py-28">
+      <div className="relative z-10 min-h-[520px] px-8 py-12 sm:px-12 sm:py-20 md:min-h-[800px] lg:px-16 lg:py-28">
         <div className="max-w-3xl">
           
           <h1 className="mt-8 text-bold leading-tight text-[#FEFAE0] text-[34px] sm:text-[36px] md:text-[48px] serif-display">
             Приватный отдых <br />
             в живописных регионах России 
           </h1>
-          <p className="hidden md:block mt-4 font-thin text-[14px] sm:text-[16px] md:text-[20px] text-[#FEFAE0]/75 ">
+          <p className="hidden md:block mt-4 font-thin  text-[14px] sm:text-[16px] md:text-[20px] text-[#FEFAE0]/75 ">
             Пространство для восстановления себя. <br />
             Новый опыт созданный для вас
           </p>
@@ -42,7 +42,7 @@ export default function Hero() {
 
     </section>
     {/* Mobile subtitle under the image */}
-    <div className="md:hidden px-4 mt-4">
+    <div className="md:hidden px-8 mt-4 mb-20">
       <p className="text-[#1C3144] text-[16px] font-normal">
         Пространство для восстановления себя. Новый опыт созданный для вас
       </p>
@@ -224,7 +224,7 @@ export default function Hero() {
       
     </section>
     
-    <section id="leisure" className="mt-20 rounded-[20px] px-6 sm:px-20 py-12 ">
+    <section id="leisure" className="mt-20 rounded-[20px] px-8 sm:px-20 py-12 ">
       <div className="mb-16  text-[#1C3144] font-medium text-[32px]">
         <h2>Досуг на территории</h2>
       </div>
@@ -263,7 +263,7 @@ export default function Hero() {
       </div>
     </section>
     
-    <section id="infrastructure" className="mt-10 rounded-[28px] px-6 sm:px-20 py-12 ">
+    <section id="infrastructure" className="mt-10 rounded-[28px] px-8 sm:px-20 py-12 ">
       <div className="mb-16 text-[#1C3144] font-medium text-[32px]">
         <p className="py-2">Инфраструктура комплексов</p>
         <p className="text-[16px]  font-normal">Всё устроено так, чтобы вы не думали о мелочах <br />Разрешите себе отдыхать <br />Это место, где не нужно пытаться понравиться</p>
@@ -310,11 +310,11 @@ export default function Hero() {
       </div>
     </section>
 
-    <section id="culinary" className="relative mt-16 rounded-[20px] bg-[#1C3144] px-6  sm:px-20 py-10 text-[#FEFAE0] ">
+    <section id="culinary" className="relative mt-16 rounded-[20px] bg-[#1C3144] px-8  sm:px-20 py-10 text-[#FEFAE0] ">
       <img src={blue} alt="decor" className="absolute -top-11 sm:-top-12 left-1/2 -translate-x-1/2  sm:w-24 md:w-40" />
       <div className="grid lg:grid-cols-2 gap-10">
 
-        <div className="overflow-hidden sm:rounded-tr-[5px] sm:rounded-br-[5px] rounded-[5px] lg:rounded-none lg:rounded-tr-[5px] lg:rounded-br-[5px] col-span-1 aspect-[4/3] -mx-6 sm:-ml-20">
+        <div className="overflow-hidden sm:rounded-tr-[5px] sm:rounded-br-[5px] rounded-[5px] lg:rounded-none lg:rounded-tr-[5px] lg:rounded-br-[5px] col-span-1 aspect-[4/3] -mx-8 sm:-ml-20">
           <img src={culinary} alt="House 337 - 1" className="block w-full h-full object-cover" />
         </div>
         
@@ -348,7 +348,7 @@ export default function Hero() {
       </div>
     </section>
 
-    <section id="reserve" className="px-6 sm:px-8 py-20 sm:py-36 ">
+    <section id="reserve" className="px-8 sm:px-8 py-20 sm:py-36 ">
       <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div className="">
           <p className="mb-12 sm:mb-8 text-[#1C3144] font-normal text-[28px]">Форма для упрощения выбора</p>
@@ -411,10 +411,10 @@ export default function Hero() {
       <div className="relative ">
         {/* Mobile: blue background — heading, then map image, then contact text */}
         <div className="md:hidden">
-          <div className="mt-4 rounded-[15px] bg-[#1C3144] p-6 text-[#FEFAE0]">
+          <div className="mt-4 rounded-[15px] bg-[#1C3144] p-8 text-[#FEFAE0]">
             <p className="mb-10 text-[28px]">Главный офис</p>
 
-            <div className="overflow-hidden rounded-[5px] aspect-[4/3] -mx-6">
+            <div className="overflow-hidden rounded-[5px] aspect-[4/3] -mx-8">
               <img src={map} alt="Map" className="block w-full h-full object-cover" />
             </div>
 
