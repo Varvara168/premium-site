@@ -268,27 +268,45 @@ export default function Hero() {
         <p className="py-2">Инфраструктура комплексов</p>
         <p className="text-[16px]  font-normal">Всё устроено так, чтобы вы не думали о мелочах <br />Разрешите себе отдыхать <br />Это место, где не нужно пытаться понравиться</p>
       </div>
-      <div className="grid gap-30 px-24 -mt-8">
-        
-        <div className="grid gap-6 sm:grid-cols-2 items-end">
-          <div className="">
-            <div className="overflow-hidden rounded-[5px] col-span-1 aspect-[4/3]">
-              <img src={transfer} alt="House 337 - 1" className="block w-full h-full object-cover" />
-            </div> 
-            
+      <div className="grid gap-6 md:gap-30 px-0 md:px-24 md:-mt-8">
+        {/* Desktop: keep images + texts layout (hidden on mobile) */}
+        <div className="hidden md:block">
+          <div className="grid gap-6 sm:grid-cols-2 items-end">
+            <div className="">
+              <div className="overflow-hidden rounded-[5px] col-span-1 aspect-[4/3]">
+                <img src={transfer} alt="House 337 - 1" className="block w-full h-full object-cover" />
+              </div>
+            </div>
+            <div className="">
+              <div className="overflow-hidden rounded-[5px] col-span-1 max-h-[300px] aspect-[3/4]">
+                <img src={women} alt="House 337 - 1" className="block w-full h-full object-cover" />
+              </div>
+            </div>
           </div>
-          <div className="">
-            <div className="overflow-hidden rounded-[5px] col-span-1 max-h-[300px] aspect-[3/4]">
-              <img src={women} alt="House 337 - 1" className="block w-full h-full object-cover" />
-            </div> 
-            
+          <div className="grid gap-6 sm:grid-cols-2">
+            <p className="py-4">Трансфер для вас</p>
+            <p className="py-4">Личный помошник на всё время <br />отдыха</p>
           </div>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2">
-          <p className="py-4">Трансфер для вас</p>
-          <p className="py-4">Личный помошник на всё время <br />отдыха</p>
+
+        {/* Mobile: 3-column grid — each item spans 2/3 (col-span-2) and stacks vertically */}
+        <div className="md:hidden px-0">
+          <div className="grid grid-cols-6 gap-x-6 gap-y-10">
+            <div className="col-span-5">
+              <div className="overflow-hidden rounded-[5px] aspect-[4/3]">
+                <img src={transfer} alt="Transfer" className="block w-full h-full object-cover" />
+              </div>
+              <p className="pt-3 text-[16px]">Трансфер для вас</p>
+            </div>
+
+            <div className="col-start-3 col-span-4">
+              <div className="overflow-hidden rounded-[5px] max-h-[300px] aspect-[3/4]">
+                <img src={women} alt="Assistant" className="block w-full h-full object-cover" />
+              </div>
+              <p className="pt-3 text-[16px]">Личный помошник всё время отдыха</p>
+            </div>
+          </div>
         </div>
-        
       </div>
     </section>
 
