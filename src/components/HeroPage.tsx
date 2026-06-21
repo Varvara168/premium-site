@@ -311,7 +311,7 @@ export default function Hero() {
     </section>
 
     <section id="culinary" className="relative mt-16 rounded-[20px] bg-[#1C3144] px-6  sm:px-20 py-10 text-[#FEFAE0] ">
-      <img src={blue} alt="decor" className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 md:w-40" />
+      <img src={blue} alt="decor" className="absolute -top-11 sm:-top-12 left-1/2 -translate-x-1/2  sm:w-24 md:w-40" />
       <div className="grid lg:grid-cols-2 gap-10">
 
         <div className="overflow-hidden sm:rounded-tr-[5px] sm:rounded-br-[5px] rounded-[5px] lg:rounded-none lg:rounded-tr-[5px] lg:rounded-br-[5px] col-span-1 aspect-[4/3] -mx-6 sm:-ml-20">
