@@ -345,7 +345,7 @@ export default function Hero() {
     <section id="reserve" className="px-8 sm:px-8 py-20 sm:py-36 ">
       <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div className="">
-          <p className="mb-6 sm:mb-8 text-[#1C3144] font-normal text-[24px] sm:text-[28px]">Форма для упрощения выбора</p>
+          <p className="mb-6 mt-4 sm:mb-8 text-[#1C3144] font-normal text-[24px] sm:text-[28px]">Форма для упрощения выбора</p>
      
           <div className="flex flex-col gap-4 sm:pl-16 text-[11px] ">
             <div className="flex items-center gap-4">
