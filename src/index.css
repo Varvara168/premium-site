@@ -4,8 +4,9 @@
 @font-face {
   font-family: 'Miama Nueva';
   src: local('Miama Nueva'),
-       url('/fonts/MiamaNueva.woff2') format('woff2'),
-       url('/fonts/MiamaNueva.woff') format('woff');
+
+       url('/fonts/MiamaNueva.ttf') format('truetype'),
+       url('/fonts/MiamaNueva.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
