@@ -409,7 +409,37 @@ export default function Hero() {
     
     <section id="location" className="mt-16 rounded-[20px] py-1">
       <div className="relative ">
-        <div className="w-full sm:w-[440px] h-auto sm:h-[530px] rounded-[20px] bg-[#1C3144] p-8 sm:p-20 text-[#FEFAE0]">
+        {/* Mobile: blue background — heading, then map image, then contact text */}
+        <div className="md:hidden">
+          <div className="mt-4 rounded-[15px] bg-[#1C3144] p-6 text-[#FEFAE0]">
+            <p className="mb-10 text-[28px]">Главный офис</p>
+
+            <div className="overflow-hidden rounded-[5px] aspect-[4/3] -mx-6">
+              <img src={map} alt="Map" className="block w-full h-full object-cover" />
+            </div>
+
+            <div className="mt-14 space-y-4 ">
+              <div className="flex items-center gap-2">
+                <span className="text-[16px] font-light">Телефон:</span>
+                <p className="text-[16px] font-light leading-tight">+7 1234567890</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-[16px] font-light">Почта:</span>
+                <p className="text-[16px] font-light leading-tight">mail@yandex.ru</p>
+              </div>
+              <div className="flex items-start gap-2 ">
+                <span className="text-[16px] font-light">Адрес:</span>
+                <p className="text-[16px] font-light leading-tight">г. Самара, Ново-Садовая 44, офис 111</p>
+              </div>
+              
+            </div>
+            <a href="">
+              <p className="text-[16px] font-extralight text-[#FEFAE0] mt-14">Полный список адресов</p>
+            </a>
+          </div>
+        </div>
+
+        <div className="hidden md:block w-full sm:w-[440px] h-auto sm:h-[530px] rounded-[20px] bg-[#1C3144] p-8 sm:p-20 text-[#FEFAE0]">
           <div>
             <p className="mb-8 text-[#FEFAE0] font-normal text-[28px]">
               Главный офис
