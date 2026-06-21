@@ -236,53 +236,54 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          {/* Mobile: custom layout per spec (6-column grid) */}
-          <div className="block lg:hidden w-full mt-6">
-            <div className="text-center">
-              <h2 className="font-medium text-[#FEFAE0] text-[28px] serif-display">Дом №337</h2>
+        </div>
+        {/* Mobile: custom layout per spec (6-column grid) */}
+        <div className="block lg:hidden w-full mt-6">
+          <div className="text-center">
+            <h2 className="font-medium text-[#FEFAE0] text-[28px] serif-display">Дом №337</h2>
+          </div>
+
+          <div className="flex items-center justify-between mt-3 px-2">
+            <div className="w-6 h-6" />
+            <p className="text-[16px] font-medium miama text-[#1C3144]">Саратовское водохранилище</p>
+            <button
+              type="button"
+              className="inline-flex items-center justify-center p-2 bg-transparent"
+              aria-label="search"
+            >
+              <img src={searchIcon} alt="search" className="h-5 w-5" />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-6 gap-2 mt-4">
+            <div className="col-span-6 overflow-hidden rounded-[5px] aspect-[3/4]">
+              <img src={house337} alt="House 337 - full" className="block w-full h-full object-cover" />
             </div>
 
-            <div className="flex items-center justify-between mt-3 px-2">
-              <div className="w-6 h-6" />
-              <p className="text-[16px] font-medium miama text-[#1C3144]">Саратовское водохранилище</p>
-              <button
-                type="button"
-                className="inline-flex items-center justify-center p-2 bg-transparent"
-                aria-label="search"
-              >
-                <img src={searchIcon} alt="search" className="h-5 w-5" />
-              </button>
+            <div className="col-span-2 overflow-hidden rounded-[5px] aspect-[3/4]">
+              <img src={liesure} alt="Leisure - left" className="block w-full h-full object-cover" />
             </div>
 
-            <div className="grid grid-cols-6 gap-2 mt-4">
-              <div className="col-span-6 overflow-hidden rounded-[5px] aspect-[3/4]">
-                <img src={house337} alt="House 337 - full" className="block w-full h-full object-cover" />
-              </div>
-
-              <div className="col-span-2 overflow-hidden rounded-[5px] aspect-[3/4]">
-                <img src={liesure} alt="Leisure - left" className="block w-full h-full object-cover" />
-              </div>
-
-              <div className="col-start-2 col-span-5 overflow-hidden rounded-[5px] aspect-[3/4]">
-                <img src={house337} alt="House 337 - offset" className="block w-full h-full object-cover" />
-              </div>
-
-              <div className="col-span-6 overflow-hidden rounded-[5px] aspect-[6/3]">
-                <img src={house337} alt="House 337 - wide" className="block w-full h-full object-cover" />
-              </div>
+            <div className="col-start-2 col-span-5 overflow-hidden rounded-[5px] aspect-[3/4]">
+              <img src={house337} alt="House 337 - offset" className="block w-full h-full object-cover" />
             </div>
 
-            <div className="mt-4">
-              <p className="text-[16px] font-light text-[#FEFAE0]">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
-              <div className="flex justify-end mt-3">
-                <button aria-label="Подробнее" className="inline-flex items-center justify-center w-12 h-12 rounded-[5px] bg-[#1C3144] text-[#FEFAE0] transition duration-300 hover:opacity-90">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
+            <div className="col-span-6 overflow-hidden rounded-[5px] aspect-[6/3]">
+              <img src={house337} alt="House 337 - wide" className="block w-full h-full object-cover" />
             </div>
           </div>
+
+          <div className="mt-4">
+            <p className="text-[16px] font-light text-[#FEFAE0]">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
+            <div className="flex justify-end mt-3">
+              <button aria-label="Подробнее" className="inline-flex items-center justify-center w-12 h-12 rounded-[5px] bg-[#1C3144] text-[#FEFAE0] transition duration-300 hover:opacity-90">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        
         </div>
         <div className="col-span-3 flex justify-center py-4">
           <button className="inline-flex items-center justify-center w-full sm:w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
