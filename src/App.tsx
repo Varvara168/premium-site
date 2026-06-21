@@ -113,10 +113,10 @@ export default function App() {
 
             {/* Mobile footer: centered logo+title, then social icons row; hide extra links */}
             <div className="md:hidden flex flex-col items-center gap-4 text-sm text-[#d9d1c2]">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-0">
                 <img src={icon} alt="Orchard House logo" className="h-10 w-10 object-contain" />
                 <div>
-                  <p className="font-semibold text-[#70161E] text-[16px] leading-4">ОТДЫХ <br />РОССИИ</p>
+                  <p className="font-semibold text-[#70161E] text-[18px] leading-4">ОТДЫХ <br />РОССИИ</p>
                 </div>
               </div>
               <div className="flex items-center gap-x-2 mt-4">
