@@ -28,7 +28,7 @@ export default function App() {
         backgroundColor: "#FEFAE0",
       }}
     >
-      <div className="mx-auto max-w-[1040px] px-0 sm:px-6 pb-24">
+      <div className="mx-auto max-w-[1040px] px-0 sm:px-6 pb-0 md:pb-24">
         <header className="sticky top-0 z-40 rounded-b-[30px] bg-[#1C3144] px-4 sm:px-8 py-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -107,44 +107,75 @@ export default function App() {
             <HeroPage />
           </div>
 
-          <footer className="mt-16 rounded-[0_0_22px_22px] bg-[#1C3144] px-8 py-8 text-[#FEFAE0] ">
-          
-            
-          <div className="flex flex-wrap items-center gap-5 text-sm text-[#d9d1c2] md:justify-between">
-            <div className="flex items-center gap-1">
-              <img src={icon} alt="Orchard House logo" className="h-8 w-8 object-contain" />
-              <div>
-                <p className="font-semibold text-[#70161E] text-[16px] leading-4">ОТДЫХ <br />РОССИИ</p>
+          <footer className="mt-16 rounded-none md:rounded-[0_0_22px_22px] bg-[#1C3144] px-8 py-8 text-[#FEFAE0] ">
+
+            {/* Mobile footer: centered logo+title, then social icons row; hide extra links */}
+            <div className="md:hidden flex flex-col items-center gap-4 text-sm text-[#d9d1c2]">
+              <div className="flex items-center gap-3">
+                <img src={icon} alt="Orchard House logo" className="h-10 w-10 object-contain" />
+                <div>
+                  <p className="font-semibold text-[#70161E] text-[16px] leading-4">ОТДЫХ <br />РОССИИ</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-x-2 mt-4">
+                <a href="" >
+                  <img src={ph} alt="Phone" className="h-6 w-6 object-contain" />
+                </a>
+                <a href="">
+                  <img src={yt} alt="YouTube" className="h-6 w-6 object-contain" />
+                </a>
+                <a href="">
+                  <img src={tg} alt="Telegram" className="h-6 w-6 object-contain" />
+                </a>
+                <a href="">
+                  <img src={vk} alt="VK" className="h-6 w-6 object-contain" />
+                </a>
+              </div>
+              <div className="flex flex-col items-center gap-0 mt-10 mb-4">
+                <a href="">
+                  <p className="text-sm font-extralight text-[#FEFAE0]">© 2026 Отдых России. Все права защищены.</p>
+                </a>
+                <a href="">
+                  <p className="text-sm font-extralight text-[#FEFAE0]">Политика конфиденциальности</p>
+                </a>
               </div>
             </div>
-            <div className="mx-auto md:absolute md:left-1/2 transform md:-translate-x-1/2">
-              <div className="flex flex-col gap-3 text-[#d9d1c2] hover:text-[#FEFAE0] md:flex-row md:items-center text-[14px] ">
-                <a href="" >Отзывы</a>
-                <a href="" >О нас</a>
-                <a href="" >Сотрудничество</a>
-                <a href="" >Жилой фонд</a>
+
+            <div className="hidden md:flex flex-wrap items-center gap-5 text-sm text-[#d9d1c2] md:justify-between">
+              <div className="flex items-center gap-1">
+                <img src={icon} alt="Orchard House logo" className="h-8 w-8 object-contain" />
+                <div>
+                  <p className="font-semibold text-[#70161E] text-[16px] leading-4">ОТДЫХ <br />РОССИИ</p>
+                </div>
+              </div>
+              <div className="mx-auto md:absolute md:left-1/2 transform md:-translate-x-1/2">
+                <div className="flex flex-col gap-3 text-[#d9d1c2] hover:text-[#FEFAE0] md:flex-row md:items-center text-[14px] ">
+                  <a href="" >Отзывы</a>
+                  <a href="" >О нас</a>
+                  <a href="" >Сотрудничество</a>
+                  <a href="" >Жилой фонд</a>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2 md:flex-row md:items-center ">
+                <a href="" >
+                  <img src={ph} alt="Phone" className="h-6 w-6 object-contain" />
+                </a>
+                <a href="" >
+                  <img src={yt} alt="YouTube" className="h-6 w-6 object-contain" />
+                </a>
+                <a href="" >
+                  <img src={tg} alt="Telegram" className="h-6 w-6 object-contain" />
+                </a>
+                <a href="" >
+                  <img src={vk} alt="VK" className="h-6 w-6 object-contain" />
+                </a>
               </div>
             </div>
-            <div className="flex flex-col gap-2 md:flex-row md:items-center ">
-              <a href="" >
-                <img src={ph} alt="Phone" className="h-6 w-6 object-contain" />
-              </a>
-              <a href="" >
-                <img src={yt} alt="YouTube" className="h-6 w-6 object-contain" />
-              </a>
-              <a href="" >
-                <img src={tg} alt="Telegram" className="h-6 w-6 object-contain" />
-              </a>
-              <a href="" >
-                <img src={vk} alt="VK" className="h-6 w-6 object-contain" />
-              </a>
-            </div>
-          </div>
-        </footer>
+          </footer>
           
         </div>
         
-        <div className="flex items-center justify-center gap-6 py-6">
+        <div className="hidden md:flex items-center justify-center gap-6 py-6">
           <a href="">
             <p className="text-sm text-[#1C3144]">© 2026 Отдых России. Все права защищены.</p>
           </a>

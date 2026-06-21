@@ -475,7 +475,7 @@ export default function Hero() {
       </div>
     </section>
 
-    <section id="news" className="mt-16 rounded-[20px] px-8 py-28 text-[#12263f]">
+    <section id="news" className="mt-16 rounded-[20px] px-8 py-6 sm:py-28 text-[#12263f]">
       {/* Desktop two-column layout (kept unchanged) */}
       <div className="hidden md:grid gap-10 lg:grid-cols-2">
         <div className="space-y-6 mb-16 col-span-1">
@@ -512,7 +512,7 @@ export default function Hero() {
 
       <div className="py-12 flex justify-center">
         <button className="inline-flex items-center justify-center w-full sm:w-[270px] rounded-[5px] bg-[#1C3144] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
-          ОТПРАВИТЬ ДАННЫЕ
+          УЗНАТЬ ПОДРОБНЕЕ
         </button>
       </div>
     </section>
