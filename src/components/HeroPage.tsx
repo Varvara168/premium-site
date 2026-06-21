@@ -476,12 +476,12 @@ export default function Hero() {
     </section>
 
     <section id="news" className="mt-16 rounded-[20px] px-8 py-28 text-[#12263f]">
-      <div className="grid gap-10 lg:grid-cols-2">
+      {/* Desktop two-column layout (kept unchanged) */}
+      <div className="hidden md:grid gap-10 lg:grid-cols-2">
         <div className="space-y-6 mb-16 col-span-1">
           <p className="mb-8 font-normal text-[32px]">Что у нас нового</p>
           <h2 className="text-[24px]">Подарочные карты</h2>
           <p className="text-[16px] ">Подарок для чувств Подарите отдых, гастрономические впечатления или спа-процедуры. Это верный способ сказать «люблю тебя», «спасибо», «я скучаю» или «с днем рождения». Кого вы хотите порадовать?</p>
-          
         </div>
         <div className="grid grid-cols-5 items-center">
           <div className="rounded-[5px] col-span-3 overflow-hidden aspect-[5/6]">
@@ -497,10 +497,24 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="py-12"><button className="inline-flex items-center justify-center w-[270px] rounded-[5px] bg-[#1C3144] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90 ">
-            ОТПРАВИТЬ ДАННЫЕ
-          </button>  
-          </div>
+
+      {/* Mobile: title -> first image -> remaining text and button */}
+      <div className="md:hidden space-y-6 mb-6">
+        <p className="mb-2 font-normal text-[28px]">Что у нас нового</p>
+        <div className="rounded-[5px] overflow-hidden aspect-[5/6]">
+          <img src={img1} alt="News 1" className="block w-full h-full object-cover rounded-[5px]" />
+        </div>
+        <div className="space-y-2">
+          <h2 className="text-[20px]">Подарочные карты</h2>
+          <p className="text-[16px]">Подарок для чувств Подарите отдых, гастрономические впечатления или спа-процедуры. Это верный способ сказать «люблю тебя», «спасибо», «я скучаю» или «с днем рождения». Кого вы хотите порадовать?</p>
+        </div>
+      </div>
+
+      <div className="py-12 flex justify-center">
+        <button className="inline-flex items-center justify-center w-full sm:w-[270px] rounded-[5px] bg-[#1C3144] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+          ОТПРАВИТЬ ДАННЫЕ
+        </button>
+      </div>
     </section>
     </div>
   )
