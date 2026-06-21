@@ -10,6 +10,7 @@ import map from "../assets/map.png"
 import img1 from "../assets/1_png.png"
 import img2 from "../assets/2_png.png"
 import liesure from "../assets/image 158.png"
+import mappointIcon from "../assets/map_point.png"
 
 export default function Hero() {
   const [showSearchInput, setShowSearchInput] = useState(false)
@@ -236,19 +237,18 @@ export default function Hero() {
         {/* Mobile: custom layout per spec (6-column grid) */}
         <div className="block lg:hidden w-full mt-6">
           <div className="text-center">
-            <h2 className="font-medium text-[#FEFAE0] text-[28px] serif-display">Дом №337</h2>
+            <h2 className="font-medium text-[#1C3144] text-[32px] serif-display">Дом №337</h2>
           </div>
 
-          <div className="flex items-center justify-between mt-3 ">
-            <div className="w-6 h-6" />
-            <p className="text-[16px] font-medium miama text-[#1C3144]">Саратовское водохранилище</p>
+          <div className="flex items-center gap-3 mt-3">
             <button
               type="button"
               className="inline-flex items-center justify-center p-2 bg-transparent"
-              aria-label="search"
+              aria-label="mappoint"
             >
-              <img src={searchIcon} alt="search" className="h-5 w-5" />
+              <img src={mappointIcon} alt="mappoint" className="h-5 w-5" />
             </button>
+            <p className="text-[16px] font-medium miama text-[#1C3144]">Саратовское водохранилище</p>
           </div>
 
           <div className="grid grid-cols-6 gap-2 mt-4">
