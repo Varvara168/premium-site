@@ -351,20 +351,20 @@ export default function Hero() {
     <section id="reserve" className="px-6 sm:px-8 py-20 sm:py-36 ">
       <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div className="">
-          <p className="mb-8 text-[#1C3144] font-normal text-[28px]">Форма для упрощения выбора</p>
+          <p className="mb-12 sm:mb-8 text-[#1C3144] font-normal text-[28px]">Форма для упрощения выбора</p>
      
-          <div className="flex flex-col gap-4 pl-16 text-[11px] ">
+          <div className="flex flex-col gap-4 sm:pl-16 text-[11px] ">
             <div className="flex items-center gap-4">
               <p className="font-normal  text-[52px]">24</p>
               <p className=" font-normal text-[16px]">Часа в сутки готовы ответить <br /> на вопросы</p>
             </div>
             <div className="flex items-center gap-4">
               <p className="font-normal  text-[52px]">10</p>
-              <p className=" font-normal text-[16px]">Минут средняя длина решения <br />по месту отдыха с попаданием <br />в  потребность</p>
+              <p className=" font-normal text-[16px]">Минут средняя длина решения <br className="hidden md:block"/>по месту отдыха с попаданием <br className="hidden md:block" />в  потребность</p>
             </div>
           </div>
         </div>
-        <form className="space-y-6 p-4 sm:p-6 ">
+        <form className="space-y-6 p-0 sm:p-6 ">
           
           <div className="space-y-2">
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
