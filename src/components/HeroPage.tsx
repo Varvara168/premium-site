@@ -33,7 +33,7 @@ export default function Hero() {
             Приватный отдых <br />
             в живописных регионах России 
           </h1>
-          <p className="md:block mt-4 font-light text-[16px] md:text-[20px] text-[#FEFAE0]/75 ">
+          <p className="md:block mt-8 sm:mt-4 font-light text-[16px] md:text-[20px] text-[#FEFAE0]/75 ">
             Пространство для восстановления себя. <br />
             Новый опыт созданный для вас
           </p>
