@@ -49,17 +49,17 @@ export default function Hero() {
     </div>
     
     <section id="about-us" className="mt-10 rounded-[20px] bg-[#1C3144] px-8 py-14 sm:px-20 sm:py-8">
-      <div className="mb-8 space-y-3 text-[#FEFAE0] font-normal text-[20px] sm:text-[28px]">
+      <div className="mb-8 space-y-3 text-[#FEFAE0] font-normal text-[24px] sm:text-[28px]">
         <h2>Заслужили доверие особыми <br />местами и сервисом</h2>
       </div>
       <div className="flex flex-col gap-8 text-[11px] sm:flex-row sm:items-start sm:justify-between sm:gap-4">
         <div className="flex flex-row items-center gap-4 sm:flex-col sm:items-start">
           <p className="font-normal text-[#FEFAE0] text-[40px] sm:text-[48px]">6</p>
-          <p className="text-[#FEFAE0] font-light text-[14px] sm:text-[16px] ml-2 sm:ml-0">Лет единый уровень <br/> сервиса</p>
+          <p className="text-[#FEFAE0] font-light text-[16px] ml-2 sm:ml-0">Лет единый уровень <br/> сервиса</p>
         </div>
         <div className="flex flex-row items-center gap-4 sm:flex-col sm:items-start">
           <p className="font-normal text-[#FEFAE0] text-[40px] sm:text-[48px]">5.0</p>
-          <p className="text-[#FEFAE0] font-light text-[14px] sm:text-[16px] ml-2 sm:ml-0">Средняя оценка наших гостей</p>
+          <p className="text-[#FEFAE0] font-light text-[16px] ml-2 sm:ml-0">Средняя оценка наших гостей</p>
         </div>
         <button className="inline-flex items-center justify-center w-full sm:w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
           ПОДРОБНЕЕ О СЕРВИСЕ
@@ -225,7 +225,7 @@ export default function Hero() {
     </section>
     
     <section id="leisure" className="mt-20 rounded-[20px] px-8 sm:px-20 py-12 ">
-      <div className="mb-16  text-[#1C3144] font-medium text-[32px]">
+      <div className="sm:mb-16 mb-10 text-[#1C3144] font-medium text-[28px] sm:text-[32px]">
         <h2>Досуг на территории</h2>
       </div>
       <div className="">
@@ -244,7 +244,6 @@ export default function Hero() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-20 py-12">
           <div className="col-span-1 space-y-4">
-            <p className="text-[16px]">Развлечение 1</p>
             <p className="text-[18px] ">Имеется спорная точка зрения, гласящая примерно следующее: тщательные исследования конкурентов, инициированные исключительно синтетически, преданы социально-демократической анафеме. В своём стремлении </p>
           </div>
           <div className="col-span-1">
@@ -255,7 +254,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="col-span-3 flex justify-center py-8">
+        <div className="col-span-3 flex justify-center sm:py-8">
           <button className="inline-flex items-center justify-center w-full sm:w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
             больше о досуге
           </button>
@@ -263,8 +262,8 @@ export default function Hero() {
       </div>
     </section>
     
-    <section id="infrastructure" className="mt-10 rounded-[28px] px-8 sm:px-20 py-12 ">
-      <div className="mb-16 text-[#1C3144] font-medium text-[32px]">
+    <section id="infrastructure" className="sm:mt-10 mt-4 rounded-[28px] px-8 sm:px-20 py-12 ">
+      <div className="mb-16 text-[#1C3144] font-medium text-[28px] sm:text-[32px]">
         <p className="py-2">Инфраструктура комплексов</p>
         <p className="text-[16px]  font-normal">Всё устроено так, чтобы вы не думали о мелочах <br />Разрешите себе отдыхать <br />Это место, где не нужно пытаться понравиться</p>
       </div>
@@ -351,7 +350,7 @@ export default function Hero() {
     <section id="reserve" className="px-8 sm:px-8 py-20 sm:py-36 ">
       <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div className="">
-          <p className="mb-12 sm:mb-8 text-[#1C3144] font-normal text-[28px]">Форма для упрощения выбора</p>
+          <p className="mb-6 sm:mb-8 text-[#1C3144] font-normal text-[24px] sm:text-[28px]">Форма для упрощения выбора</p>
      
           <div className="flex flex-col gap-4 sm:pl-16 text-[11px] ">
             <div className="flex items-center gap-4">
@@ -411,7 +410,7 @@ export default function Hero() {
       <div className="relative ">
         {/* Mobile: blue background — heading, then map image, then contact text */}
         <div className="md:hidden">
-          <div className="mt-4 rounded-[15px] bg-[#1C3144] p-8 text-[#FEFAE0]">
+          <div className="mt-6 rounded-[15px] bg-[#1C3144] p-8 text-[#FEFAE0]">
             <p className="mb-10 text-[28px]">Главный офис</p>
 
             <div className="overflow-hidden rounded-[5px] aspect-[4/3] -mx-8">
@@ -441,7 +440,7 @@ export default function Hero() {
 
         <div className="hidden md:block w-full sm:w-[440px] h-auto sm:h-[530px] rounded-[20px] bg-[#1C3144] p-8 sm:p-20 text-[#FEFAE0]">
           <div>
-            <p className="mb-8 text-[#FEFAE0] font-normal text-[28px]">
+            <p className="mb-8  text-[#FEFAE0] font-normal text-[28px]">
               Главный офис
             </p>
 
@@ -479,7 +478,7 @@ export default function Hero() {
       {/* Desktop two-column layout (kept unchanged) */}
       <div className="hidden md:grid gap-10 lg:grid-cols-2">
         <div className="space-y-6 mb-16 col-span-1">
-          <p className="mb-8 font-normal text-[32px]">Что у нас нового</p>
+          <p className="mb-8 font-normal text-[28px] sm:text-[32px]">Что у нас нового</p>
           <h2 className="text-[24px]">Подарочные карты</h2>
           <p className="text-[16px] ">Подарок для чувств Подарите отдых, гастрономические впечатления или спа-процедуры. Это верный способ сказать «люблю тебя», «спасибо», «я скучаю» или «с днем рождения». Кого вы хотите порадовать?</p>
         </div>
