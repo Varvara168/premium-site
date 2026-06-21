@@ -439,7 +439,7 @@ export default function Hero() {
         </div>
 
         <div className="absolute top-11 left-[380px] z-20 hidden sm:block">
-          <img src={map} alt="Map" className="w-[420px] h-[440px]  rounded-[5px] object-cover" />
+          <img src={map} alt="Map" className="w-full h-[440px]  rounded-[5px] object-cover" />
         </div>
 
       </div>
