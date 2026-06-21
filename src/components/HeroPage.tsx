@@ -33,7 +33,7 @@ export default function Hero() {
             Приватный отдых <br />
             в живописных регионах России 
           </h1>
-          <p className="hidden md:block mt-4 font-thin  text-[14px] sm:text-[16px] md:text-[20px] text-[#FEFAE0]/75 ">
+          <p className="md:block mt-4 font-light text-[16px] md:text-[20px] text-[#FEFAE0]/75 ">
             Пространство для восстановления себя. <br />
             Новый опыт созданный для вас
           </p>
@@ -41,12 +41,7 @@ export default function Hero() {
       </div>
 
     </section>
-    {/* Mobile subtitle under the image */}
-    <div className="md:hidden px-8 mt-4 mb-20">
-      <p className="text-[#1C3144] text-[16px] font-normal">
-        Пространство для восстановления себя. Новый опыт созданный для вас
-      </p>
-    </div>
+
     
     <section id="about-us" className="mt-10 rounded-[20px] bg-[#1C3144] px-8 py-14 sm:px-20 sm:py-8">
       <div className="mb-8 space-y-3 text-[#FEFAE0] font-normal text-[24px] sm:text-[28px]">
