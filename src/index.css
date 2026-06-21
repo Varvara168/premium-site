@@ -1,12 +1,15 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
 
-/* Miama Nueva — place font files in /public/fonts/ (MiamaNueva.woff2/woff) */
 @font-face {
   font-family: 'Miama Nueva';
   src: local('Miama Nueva'),
 
-       url('/fonts/MiamaNueva.ttf') format('truetype'),
-       url('/fonts/MiamaNueva.otf') format('opentype');
+       /* preferred web formats (if you add .woff2/.woff to public/fonts) */
+       url('/fonts/MiamaNueva.woff2') format('woff2'),
+       url('/fonts/MiamaNueva.woff') format('woff'),
+       /* fallback to TTF/OTF kept in repo root `fonts/` (relative to src/) */
+       url('../fonts/miamanueva.ttf') format('truetype'),
+       url('../fonts/miamanueva.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
