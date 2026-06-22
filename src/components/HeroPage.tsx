@@ -12,7 +12,71 @@ import img2 from "../assets/2_png.png"
 import liesure from "../assets/image 158.png"
 import mappointIcon from "../assets/map_point.png"
 
+
 export default function Hero() {
+  const [method, setMethod] = useState("email"); // 'email'
+  const [contact, setContact] = useState("");
+  const [contactError, setContactError] = useState("");
+  const [name, setName] = useState("");
+  const textareaRef = useRef(null);
+
+  useEffect(() => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height = textareaRef.current.scrollHeight + "px";
+    }
+  }, []);
+
+  const handleTextareaInput = (e) => {
+    const el = e.target;
+    el.style.height = "auto";
+    el.style.height = el.scrollHeight + "px";
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const msg = (textareaRef.current && textareaRef.current.value) || "Здравствуйте, скоро я с вами свяжусь.";
+
+    // Basic validation for email (kept)
+    if (!contact) {
+      alert("Пожалуйста, укажите email.");
+      return;
+    }
+    const emailRe = /^\S+@\S+\.\S+$/;
+    if (!emailRe.test(contact)) {
+      alert('Пожалуйста, укажите корректный email.');
+      return;
+    }
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, method, contact, message: msg }),
+      });
+
+      if (res.ok) {
+        alert('Сообщение отправлено. Мы свяжемся с вами скоро.');
+        // clear form
+        setName('');
+        setContact('');
+        if (textareaRef.current) textareaRef.current.value = '';
+      } else {
+        const data = await res.json().catch(() => ({}));
+        alert(data?.error || 'Ошибка сервера при отправке. Попробуйте позже.');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Не удалось отправить запрос. Проверьте подключение.');
+    }
+  };
+
+  const contactPlaceholder = {
+    email: "Email",
+  }[method];
+
+  const contactType = "email";
+
   const [showSearchInput, setShowSearchInput] = useState(false)
   const searchInputRef = useRef<HTMLInputElement | null>(null)
 
@@ -20,6 +84,7 @@ export default function Hero() {
   const leftColRef = useRef<HTMLDivElement | null>(null)
   const sectionRef = useRef<HTMLElement | null>(null)
   const [headerSticky, setHeaderSticky] = useState(true)
+  
 
   useEffect(() => {
     function calc() {
@@ -417,26 +482,46 @@ export default function Hero() {
     <section id="reserve" className="px-8 sm:px-8 py-20 sm:py-36 ">
       <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div className="">
-          <p className="mb-6 mt-4 sm:mb-8 text-[#1C3144] font-normal text-[24px] sm:text-[28px]">Форма для упрощения выбора</p>
+          <p className="mb-6 mt-4 sm:mb-8 text-[#1C3144] font-normal text-[24px] sm:text-[28px]">Форма на создание бренд-дизайна</p>
      
           <div className="flex flex-col gap-4 sm:pl-16 text-[11px] ">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 font-normal text-[16px]">Мои принципы</div>
+            {/* <div className="flex items-center gap-4">
               <p className="font-normal  text-[52px]">24</p>
               <p className=" font-normal text-[16px]">Часа в сутки готовы ответить <br /> на вопросы</p>
             </div>
             <div className="flex items-center gap-4">
               <p className="font-normal  text-[52px]">10</p>
               <p className=" font-normal text-[16px]">Минут средняя длина решения <br className="hidden md:block"/>по месту отдыха с попаданием <br className="hidden md:block" />в  потребность</p>
+            </div> */}
+            <div className="flex items-center gap-4">
+              <p className="font-normal  text-[52px]">01</p>
+              <p className=" font-normal text-[16px]">Бренд — это система, а не логотип. Делаю не «красивый дизайн», а инструмент для продаж.</p>
+            </div> 
+            <div className="flex items-center gap-4">
+              <p className="font-normal  text-[52px]">02</p>
+              <p className=" font-normal text-[16px]">AI — инструмент, а не замена скиллов. Нейросети ускоряют рутину, но стратегией и идеями всё равно занимается человек.</p>
+            </div> 
+            <div className="flex items-center gap-4">
+              <p className="font-normal  text-[52px]">03</p>
+              <p className=" font-normal text-[16px]">Сначала разобраться, потом рисовать. Половина проекта — вопросы и исследование. Если дизайнер сразу полез в реализацию — бегите.</p>
             </div>
+            <div className="flex items-center gap-4">
+              <p className="font-normal  text-[52px]">04</p>
+              <p className=" font-normal text-[16px]">Работаю до результата. Проект закрыт не когда красиво отрисован, а когда внутри зашиты все необходимые смыслы.</p>
+            </div>
+
           </div>
         </div>
-        <form className="space-y-6 p-0 sm:p-6 ">
+        <form onSubmit={handleSubmit} className="space-y-6 p-0 sm:p-6 ">
           
-          <div className="space-y-2">
+          {/* <div className="space-y-2">
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Фамилия Имя</span>
               <input
                 type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f]"
                 placeholder="Фамилия Имя"
               />
@@ -465,8 +550,47 @@ export default function Hero() {
                 placeholder="Время для связи"
               />
             </label>
+          </div> */}
+          <div className="space-y-3">
+            <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
+              <span className="sr-only">Фамилия Имя</span>
+              <input
+                type="text"
+                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f]"
+                placeholder="Фамилия Имя"
+              />
+            </label>
+
+            <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
+              <span className="sr-only">Контакт</span>
+              <input
+                type={contactType}
+                value={contact}
+                onChange={(e) => {
+                  const v = e.target.value;
+                  setContact(v);
+                  const emailReLocal = /^\S+@\S+\.\S+$/;
+                  setContactError(v && !emailReLocal.test(v) ? 'Некорректный email' : '');
+                }}
+                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f]"
+                placeholder={contactPlaceholder}
+              />
+              {contactError && <p className="mt-2 text-[13px] text-[#ff6b6b]">{contactError}</p>}
+            </label>
+          
+
+            <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
+              <span className="sr-only">Сообщение</span>
+              <textarea
+                ref={textareaRef}
+                onInput={handleTextareaInput}
+                className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f] min-h-[80px]"
+                placeholder="Ваше сообщение"
+              />
+            </label>
+            
           </div>
-          <button className="inline-flex items-center justify-center w-full sm:w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+          <button type="submit" className="inline-flex items-center justify-center w-full sm:w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
             отправить запрос
           </button>
         </form>
