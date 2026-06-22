@@ -1,4 +1,4 @@
-﻿import { useRef, useState, useEffect } from "react"
+﻿import React, { useRef, useState, useEffect } from "react"
 import heroImage from "../assets/hero.png"
 import searchIcon from "../assets/search.png"
 import house337 from "../assets/house337.png"
@@ -14,11 +14,11 @@ import mappointIcon from "../assets/map_point.png"
 
 
 export default function Hero() {
-  const [method, setMethod] = useState("email"); // 'email'
+  const [method] = useState("email"); // 'email'
   const [contact, setContact] = useState("");
   const [contactError, setContactError] = useState("");
   const [name, setName] = useState("");
-  const textareaRef = useRef(null);
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 // сом
   useEffect(() => {
     if (textareaRef.current) {
@@ -27,13 +27,13 @@ export default function Hero() {
     }
   }, []);
 
-  const handleTextareaInput = (e) => {
-    const el = e.target;
+  const handleTextareaInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    const el = e.currentTarget;
     el.style.height = "auto";
     el.style.height = el.scrollHeight + "px";
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const msg = (textareaRef.current && textareaRef.current.value) || "Здравствуйте, скоро я с вами свяжусь.";
 
