@@ -500,19 +500,19 @@ export default function Hero() {
     <section id="reserve" className="px-8 sm:px-8 py-20 sm:py-36 ">
       <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div className="">
-          <p className="mb-6 mt-4 sm:mb-8 text-[#1C3144] font-normal text-[24px] sm:text-[28px]">Форма на создание бренд-дизайна</p>
+          <p className="mb-6 mt-4 sm:mb-8 text-[#1C3144] font-normal text-[24px] sm:text-[28px]">Форма для простого решения</p>
      
           <div className="flex flex-col gap-4 sm:pl-16 text-[11px] ">
-            <div className="flex items-center gap-4 font-normal text-[16px]">Мои принципы</div>
-            {/* <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4">
               <p className="font-normal  text-[52px]">24</p>
               <p className=" font-normal text-[16px]">Часа в сутки готовы ответить <br /> на вопросы</p>
             </div>
             <div className="flex items-center gap-4">
               <p className="font-normal  text-[52px]">10</p>
               <p className=" font-normal text-[16px]">Минут средняя длина решения <br className="hidden md:block"/>по месту отдыха с попаданием <br className="hidden md:block" />в  потребность</p>
-            </div> */}
-            <div className="flex items-center gap-4">
+            </div>
+            {/* <div className="flex items-center gap-4 font-normal text-[16px]">Мои принципы</div> */}
+            {/* <div className="flex items-center gap-4">
               <p className="font-normal  text-[52px]">01</p>
               <p className=" font-normal text-[16px]">Бренд — это система, а не логотип. Делаю не «красивый дизайн», а инструмент для продаж.</p>
             </div> 
@@ -527,13 +527,13 @@ export default function Hero() {
             <div className="flex items-center gap-4">
               <p className="font-normal  text-[52px]">04</p>
               <p className=" font-normal text-[16px]">Работаю до результата. Проект закрыт не когда красиво отрисован, а когда внутри зашиты все необходимые смыслы.</p>
-            </div>
+            </div> */}
 
           </div>
         </div>
         <form onSubmit={handleSubmit} className="space-y-6 p-0 sm:p-6 ">
           
-          {/* <div className="space-y-2">
+          <div className="space-y-2">
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Фамилия Имя</span>
               <input
@@ -568,8 +568,8 @@ export default function Hero() {
                 placeholder="Время для связи"
               />
             </label>
-          </div> */}
-          <div className="space-y-2">
+          </div>
+          {/* <div className="space-y-2">
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Фамилия Имя</span>
               <input
@@ -633,7 +633,7 @@ export default function Hero() {
               />
             </label>
             
-          </div>
+          </div> */}
           <button type="submit" className="inline-flex items-center justify-center w-full sm:w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
             отправить запрос
           </button>
