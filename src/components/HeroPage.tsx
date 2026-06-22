@@ -14,7 +14,7 @@ import mappointIcon from "../assets/map_point.png"
 
 
 export default function Hero() {
-  const [method] = useState("email"); // 'email'
+  const [method, setMethod] = useState("email"); // 'email'
   const [contact, setContact] = useState("");
   const [contactError, setContactError] = useState("");
   const [name, setName] = useState("");
@@ -37,15 +37,25 @@ export default function Hero() {
     e.preventDefault();
     const msg = (textareaRef.current && textareaRef.current.value) || "Здравствуйте, скоро я с вами свяжусь.";
 
-    // Basic validation for email (kept)
+    // Basic validation depending on selected method
     if (!contact) {
-      alert("Пожалуйста, укажите email.");
+      alert("Пожалуйста, укажите контакт для связи.");
       return;
     }
     const emailRe = /^\S+@\S+\.\S+$/;
-    if (!emailRe.test(contact)) {
-      alert('Пожалуйста, укажите корректный email.');
-      return;
+    const phoneRe = /^\+?[0-9\s\-()]{6,20}$/;
+    if (method === 'email') {
+      if (!emailRe.test(contact)) {
+        alert('Пожалуйста, укажите корректный email.');
+        return;
+      }
+    } else if (method === 'phone') {
+      if (!phoneRe.test(contact)) {
+        alert('Пожалуйста, укажите корректный номер телефона.');
+        return;
+      }
+    } else {
+      // for telegram / vk we only require non-empty value
     }
 
     try {
@@ -73,9 +83,17 @@ export default function Hero() {
 
   const contactPlaceholder = {
     email: "Email",
+    phone: "Номер телефона",
+    telegram: "Telegram (@username)",
+    vk: "VK (id или ссылка)",
   }[method];
 
-  const contactType = "email";
+  const contactType = {
+    email: "email",
+    phone: "tel",
+    telegram: "text",
+    vk: "text",
+  }[method] as string;
 
   const [showSearchInput, setShowSearchInput] = useState(false)
   const searchInputRef = useRef<HTMLInputElement | null>(null)
@@ -561,6 +579,25 @@ export default function Hero() {
               />
             </label>
 
+            <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0] px-4 py-3">
+              <span className="sr-only">Способ связи</span>
+              <select
+                value={method}
+                onChange={(e) => {
+                  const m = e.target.value as string;
+                  setMethod(m);
+                  setContact('');
+                  setContactError('');
+                }}
+                className="w-full bg-[#FEFAE0] text-[14px] font-normal text-[#12263f] outline-none"
+              >
+                <option value="email">Email</option>
+                <option value="phone">Телефон</option>
+                <option value="telegram">Telegram</option>
+                <option value="vk">ВКонтакте</option>
+              </select>
+            </label>
+
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Контакт</span>
               <input
@@ -570,7 +607,14 @@ export default function Hero() {
                   const v = e.target.value;
                   setContact(v);
                   const emailReLocal = /^\S+@\S+\.\S+$/;
-                  setContactError(v && !emailReLocal.test(v) ? 'Некорректный email' : '');
+                  const phoneReLocal = /^\+?[0-9\s\-()]{6,20}$/;
+                  if (method === 'email') {
+                    setContactError(v && !emailReLocal.test(v) ? 'Некорректный email' : '');
+                  } else if (method === 'phone') {
+                    setContactError(v && !phoneReLocal.test(v) ? 'Некорректный номер' : '');
+                  } else {
+                    setContactError('');
+                  }
                 }}
                 className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f]"
                 placeholder={contactPlaceholder}
