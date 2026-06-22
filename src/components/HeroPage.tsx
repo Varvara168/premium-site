@@ -14,7 +14,7 @@ import mappointIcon from "../assets/map_point.png"
 
 
 export default function Hero() {
-  // const [method, setMethod] = useState("email"); // 'email'
+  const [method, setMethod] = useState("email"); // 'email'
   const [contact, setContact] = useState("");
   const [contactError, setContactError] = useState("");
   const [name, setName] = useState("");
