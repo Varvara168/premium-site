@@ -19,7 +19,7 @@ export default function Hero() {
   const [contactError, setContactError] = useState("");
   const [name, setName] = useState("");
   const textareaRef = useRef(null);
-
+// сом
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
