@@ -14,7 +14,7 @@ import mappointIcon from "../assets/map_point.png"
 
 
 export default function Hero() {
-  const [method, setMethod] = useState("email"); // 'email'
+  // const [method, setMethod] = useState("email"); // 'email'
   const [contact, setContact] = useState("");
   const [contactError, setContactError] = useState("");
   const [name, setName] = useState("");
@@ -551,7 +551,7 @@ export default function Hero() {
               />
             </label>
           </div> */}
-          <div className="space-y-3">
+          <div className="space-y-2">
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Фамилия Имя</span>
               <input
