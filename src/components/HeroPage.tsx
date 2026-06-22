@@ -14,86 +14,86 @@ import mappointIcon from "../assets/map_point.png"
 
 
 export default function Hero() {
-  const [method, setMethod] = useState("email"); // 'email'
-  const [contact, setContact] = useState("");
-  const [contactError, setContactError] = useState("");
-  const [name, setName] = useState("");
-  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
-// сом
-  useEffect(() => {
-    if (textareaRef.current) {
-      textareaRef.current.style.height = "auto";
-      textareaRef.current.style.height = textareaRef.current.scrollHeight + "px";
-    }
-  }, []);
+//   const [method, setMethod] = useState("email"); // 'email'
+//   const [contact, setContact] = useState("");
+//   const [contactError, setContactError] = useState("");
+//   const [name, setName] = useState("");
+//   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+// // сом
+//   useEffect(() => {
+//     if (textareaRef.current) {
+//       textareaRef.current.style.height = "auto";
+//       textareaRef.current.style.height = textareaRef.current.scrollHeight + "px";
+//     }
+//   }, []);
 
-  const handleTextareaInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
-    const el = e.currentTarget;
-    el.style.height = "auto";
-    el.style.height = el.scrollHeight + "px";
-  };
+//   const handleTextareaInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
+//     const el = e.currentTarget;
+//     el.style.height = "auto";
+//     el.style.height = el.scrollHeight + "px";
+//   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const msg = (textareaRef.current && textareaRef.current.value) || "Здравствуйте, скоро я с вами свяжусь.";
+//   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+//     e.preventDefault();
+//     const msg = (textareaRef.current && textareaRef.current.value) || "Здравствуйте, скоро я с вами свяжусь.";
 
-    // Basic validation depending on selected method
-    if (!contact) {
-      alert("Пожалуйста, укажите контакт для связи.");
-      return;
-    }
-    const emailRe = /^\S+@\S+\.\S+$/;
-    const phoneRe = /^\+?[0-9\s\-()]{6,20}$/;
-    if (method === 'email') {
-      if (!emailRe.test(contact)) {
-        alert('Пожалуйста, укажите корректный email.');
-        return;
-      }
-    } else if (method === 'phone') {
-      if (!phoneRe.test(contact)) {
-        alert('Пожалуйста, укажите корректный номер телефона.');
-        return;
-      }
-    } else {
-      // for telegram / vk we only require non-empty value
-    }
+//     // Basic validation depending on selected method
+//     if (!contact) {
+//       alert("Пожалуйста, укажите контакт для связи.");
+//       return;
+//     }
+//     const emailRe = /^\S+@\S+\.\S+$/;
+//     const phoneRe = /^\+?[0-9\s\-()]{6,20}$/;
+//     if (method === 'email') {
+//       if (!emailRe.test(contact)) {
+//         alert('Пожалуйста, укажите корректный email.');
+//         return;
+//       }
+//     } else if (method === 'phone') {
+//       if (!phoneRe.test(contact)) {
+//         alert('Пожалуйста, укажите корректный номер телефона.');
+//         return;
+//       }
+//     } else {
+//       // for telegram / vk we only require non-empty value
+//     }
 
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, method, contact, message: msg }),
-      });
+//     try {
+//       const res = await fetch('/api/contact', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ name, method, contact, message: msg }),
+//       });
 
-      if (res.ok) {
-        alert('Сообщение отправлено. Мы свяжемся с вами скоро.');
-        // clear form
-        setName('');
-        setContact('');
-        if (textareaRef.current) textareaRef.current.value = '';
-      } else {
-        const data = await res.json().catch(() => ({}));
-        alert(data?.error || 'Ошибка сервера при отправке. Попробуйте позже.');
-      }
-    } catch (err) {
-      console.error(err);
-      alert('Не удалось отправить запрос. Проверьте подключение.');
-    }
-  };
+//       if (res.ok) {
+//         alert('Сообщение отправлено. Мы свяжемся с вами скоро.');
+//         // clear form
+//         setName('');
+//         setContact('');
+//         if (textareaRef.current) textareaRef.current.value = '';
+//       } else {
+//         const data = await res.json().catch(() => ({}));
+//         alert(data?.error || 'Ошибка сервера при отправке. Попробуйте позже.');
+//       }
+//     } catch (err) {
+//       console.error(err);
+//       alert('Не удалось отправить запрос. Проверьте подключение.');
+//     }
+//   };
 
-  const contactPlaceholder = {
-    email: "Email",
-    phone: "Номер телефона",
-    telegram: "Telegram (@username)",
-    vk: "VK (id или ссылка)",
-  }[method];
+//   const contactPlaceholder = {
+//     email: "Email",
+//     phone: "Номер телефона",
+//     telegram: "Telegram (@username)",
+//     vk: "VK (id или ссылка)",
+//   }[method];
 
-  const contactType = {
-    email: "email",
-    phone: "tel",
-    telegram: "text",
-    vk: "text",
-  }[method] as string;
+//   const contactType = {
+//     email: "email",
+//     phone: "tel",
+//     telegram: "text",
+//     vk: "text",
+//   }[method] as string;
 
   const [showSearchInput, setShowSearchInput] = useState(false)
   const searchInputRef = useRef<HTMLInputElement | null>(null)
@@ -500,7 +500,8 @@ export default function Hero() {
     <section id="reserve" className="px-8 sm:px-8 py-20 sm:py-36 ">
       <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div className="">
-          <p className="mb-6 mt-4 sm:mb-8 text-[#1C3144] font-normal text-[24px] sm:text-[28px]">Форма для простого решения</p>
+          <p className="mb-6 mt-4 sm:mb-8 text-[#1C3144] font-normal text-[24px] sm:text-[28px]">Форма для простого решения</p> 
+          {/* Форма на создание бренд дизайна */}
      
           <div className="flex flex-col gap-4 sm:pl-16 text-[11px] ">
             <div className="flex items-center gap-4">
@@ -531,15 +532,14 @@ export default function Hero() {
 
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="space-y-6 p-0 sm:p-6 ">
-          
+        <form className="space-y-6 p-0 sm:p-6 ">
+        {/* <form onSubmit={handleSubmit} className="space-y-6 p-0 sm:p-6 "> */}
           <div className="space-y-2">
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Фамилия Имя</span>
               <input
                 type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                
                 className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f]"
                 placeholder="Фамилия Имя"
               />
