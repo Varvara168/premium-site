@@ -36,8 +36,7 @@ export default function Hero() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const msg = (textareaRef.current && textareaRef.current.value) || "Здравствуйте, скоро я с вами свяжусь.";
-
+    
     // Basic validation depending on selected method
     if (!contact) {
       alert("Пожалуйста, укажите контакт для связи.");
@@ -521,7 +520,7 @@ export default function Hero() {
 
           </div>
         </div>
-        <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6 p-0 sm:p-6 ">
+        <form action="https://api.web3forms.com/submit" method="POST" onSubmit={handleSubmit} className="space-y-6 p-0 sm:p-6 ">
           
           
           {/* <div className="space-y-2">
