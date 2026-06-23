@@ -39,12 +39,12 @@ export default function App() {
             </div>
 
             <nav className="hidden items-center gap-8 text-[14px] tracking-[0.1em] text-[#FEFAE0]/90 md:flex">
-              <a href="#experience" className="transition hover:text-[#FEFAE0]">Жилой фонд</a>
+              <a href="#best-offer" className="transition hover:text-[#FEFAE0]">Жилой фонд</a>
               <a href="#benefits" className="transition hover:text-[#FEFAE0]">Баня</a>
-              <a href="#culinary" className="transition hover:text-[#FEFAE0]">Досуг</a>
-              <a href="#reserve" className="transition hover:text-[#FEFAE0]">Сервис</a>
+              <a href="#leisure" className="transition hover:text-[#FEFAE0]">Досуг</a>
+              <a href="#infrastructure" className="transition hover:text-[#FEFAE0]">Сервис</a>
               <a href="#reserve" className="transition hover:text-[#FEFAE0]">Отзывы</a>
-              <a href="#reserve" className="transition hover:text-[#FEFAE0]">Контакты</a>
+              <a href="#contacts" className="transition hover:text-[#FEFAE0]">Контакты</a>
             </nav>
 
             <div className="flex items-center gap-3">
@@ -89,13 +89,13 @@ export default function App() {
                 <span className="absolute inset-0 m-auto block h-[2px] w-5 bg-[#FEFAE0] -rotate-45" />
               </span>
             </button>
-            <a href="#experience" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Жилой фонд</a>
-            <a href="#benefits" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Баня</a>
-            <a href="#culinary" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Досуг</a>
-            <a href="#reserve" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Сервис</a>
+            <a href="#best-offer" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Жилой фонд</a>
+            <a href="#best-offer" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Баня</a>
+            <a href="#leisure" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Досуг</a>
+            <a href="#infrastructure" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Сервис</a>
             <a href="#reviews" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Отзывы</a>
-            <a href="#about" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">О нас</a>
-            <a href="#cooperation" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Сотрудничество</a>
+            <a href="#about-us" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">О нас</a>
+            <a href="#reserve" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Сотрудничество</a>
             <a href="#contacts" onClick={() => setMenuOpen(false)} className="text-2xl font-medium">Контакты</a>
 
             <a href="#reserve" onClick={() => setMenuOpen(false)} className="mt-4 inline-flex items-center justify-center rounded-md bg-[#70161E] px-12 py-3 text-[16px] font-regular uppercase text-[#FEFAE0]">
@@ -109,7 +109,7 @@ export default function App() {
             <HeroPage />
           </div>
 
-          <footer className="mt-16 rounded-none md:rounded-[0_0_22px_22px] bg-[#1C3144] px-8 py-8 text-[#FEFAE0] ">
+          <footer id="contacts" className="mt-16 rounded-none md:rounded-[0_0_22px_22px] bg-[#1C3144] px-8 py-8 text-[#FEFAE0] ">
 
             {/* Mobile footer: centered logo+title, then social icons row; hide extra links */}
             <div className="md:hidden flex flex-col items-center gap-4 text-sm text-[#d9d1c2]">
