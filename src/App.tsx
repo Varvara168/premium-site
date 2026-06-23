@@ -31,12 +31,12 @@ export default function App() {
       <div className="mx-auto max-w-[1040px] px-0 sm:px-6 pb-0 md:pb-24">
         <header className="sticky top-0 z-40 rounded-b-[15px] sm:rounded-b-[30px] bg-[#1C3144] px-8 sm:px-8 py-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
+            <a href="#about-us" className="flex items-center gap-3">
               <img src={icon} alt="Orchard House logo" className="h-11 w-11 object-contain" />
               <div className="hidden md:block">
                 <p className="font-semibold text-[#70161E] text-[20px] leading-5">ОТДЫХ <br />РОССИИ</p>
               </div>
-            </div>
+            </a>
 
             <nav className="hidden items-center gap-8 text-[14px] tracking-[0.1em] text-[#FEFAE0]/90 md:flex">
               <a href="#best-offer" className="transition hover:text-[#FEFAE0]">Жилой фонд</a>
@@ -113,23 +113,23 @@ export default function App() {
 
             {/* Mobile footer: centered logo+title, then social icons row; hide extra links */}
             <div className="md:hidden flex flex-col items-center gap-4 text-sm text-[#d9d1c2]">
-              <div className="flex items-center gap-0">
+              <a href="#about-us" className="flex items-center gap-0">
                 <img src={icon} alt="Orchard House logo" className="h-10 w-10 object-contain" />
                 <div>
                   <p className="font-semibold text-[#70161E] text-[18px] leading-4">ОТДЫХ <br />РОССИИ</p>
                 </div>
-              </div>
+              </a>
               <div className="flex items-center gap-x-2 mt-4">
-                <a href="" >
+                <a href="tel:+79608327054" aria-label="Позвонить">
                   <img src={ph} alt="Phone" className="h-6 w-6 object-contain" />
                 </a>
                 <a href="">
                   <img src={yt} alt="YouTube" className="h-6 w-6 object-contain" />
                 </a>
-                <a href="">
+                <a href="https://t.me/God_mai">
                   <img src={tg} alt="Telegram" className="h-6 w-6 object-contain" />
                 </a>
-                <a href="">
+                <a href="https://vk.com/sibyakovavarvara">
                   <img src={vk} alt="VK" className="h-6 w-6 object-contain" />
                 </a>
               </div>
@@ -144,31 +144,32 @@ export default function App() {
             </div>
 
             <div className="hidden md:flex flex-wrap items-center gap-5 text-sm text-[#d9d1c2] md:justify-between">
-              <div className="flex items-center gap-1">
+              <a href="#about-us" className="flex items-center gap-1">
+                
                 <img src={icon} alt="Orchard House logo" className="h-8 w-8 object-contain" />
                 <div>
                   <p className="font-semibold text-[#70161E] text-[16px] leading-4">ОТДЫХ <br />РОССИИ</p>
                 </div>
-              </div>
+              </a>
               <div className="mx-auto md:absolute md:left-1/2 transform md:-translate-x-1/2">
                 <div className="flex flex-col gap-3 text-[#d9d1c2] hover:text-[#FEFAE0] md:flex-row md:items-center text-[14px] ">
-                  <a href="" >Отзывы</a>
-                  <a href="" >О нас</a>
-                  <a href="" >Сотрудничество</a>
-                  <a href="" >Жилой фонд</a>
+                  <a href="#reserve" >Отзывы</a>
+                  <a href="#about-us" >О нас</a>
+                  <a href="#reserve" >Сотрудничество</a>
+                  <a href="#best-offer" >Жилой фонд</a>
                 </div>
               </div>
               <div className="flex flex-col gap-2 md:flex-row md:items-center ">
-                <a href="" >
+                <a href="tel:+79608327054" aria-label="Позвонить">
                   <img src={ph} alt="Phone" className="h-6 w-6 object-contain" />
                 </a>
                 <a href="" >
                   <img src={yt} alt="YouTube" className="h-6 w-6 object-contain" />
                 </a>
-                <a href="" >
+                <a href="https://t.me/God_mai" >
                   <img src={tg} alt="Telegram" className="h-6 w-6 object-contain" />
                 </a>
-                <a href="" >
+                <a href="https://vk.com/sibyakovavarvara" >
                   <img src={vk} alt="VK" className="h-6 w-6 object-contain" />
                 </a>
               </div>
