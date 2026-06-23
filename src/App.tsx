@@ -126,10 +126,10 @@ export default function App() {
                 <a href="">
                   <img src={yt} alt="YouTube" className="h-6 w-6 object-contain" />
                 </a>
-                <a href="https://t.me/God_mai">
+                <a href="https://t.me/God_mai" target="_blank" rel="noopener noreferrer">
                   <img src={tg} alt="Telegram" className="h-6 w-6 object-contain" />
                 </a>
-                <a href="https://vk.com/sibyakovavarvara">
+                <a href="https://vk.com/sibyakovavarvara" target="_blank" rel="noopener noreferrer">
                   <img src={vk} alt="VK" className="h-6 w-6 object-contain" />
                 </a>
               </div>
@@ -166,10 +166,10 @@ export default function App() {
                 <a href="" >
                   <img src={yt} alt="YouTube" className="h-6 w-6 object-contain" />
                 </a>
-                <a href="https://t.me/God_mai" >
+                <a href="https://t.me/God_mai" target="_blank" rel="noopener noreferrer">
                   <img src={tg} alt="Telegram" className="h-6 w-6 object-contain" />
                 </a>
-                <a href="https://vk.com/sibyakovavarvara" >
+                <a href="https://vk.com/sibyakovavarvara" target="_blank" rel="noopener noreferrer">
                   <img src={vk} alt="VK" className="h-6 w-6 object-contain" />
                 </a>
               </div>
