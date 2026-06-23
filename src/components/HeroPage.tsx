@@ -590,7 +590,7 @@ export default function Hero() {
               >
                 <option value="email">Email</option>
                 <option value="phone">Телефон</option>
-                <option value="telegram">Tele/gram</option>
+                <option value="telegram">Telegram</option>
                 <option value="vk">ВКонтакте</option>
               </select>
             </label>
