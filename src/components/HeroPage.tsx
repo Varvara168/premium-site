@@ -14,11 +14,13 @@ import mappointIcon from "../assets/map_point.png"
 
 
 export default function Hero() {
-  const [method] = useState("email"); // 'email'
+  const [method, setMethod] = useState("email"); // 'email'
+  // const [method] = useState("email"); // 'email'
   const [contact, setContact] = useState("");
+  const [contactError, setContactError] = useState("");
   const [name, setName] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
-// сом
+
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
@@ -26,7 +28,11 @@ export default function Hero() {
     }
   }, []);
 
-  // textarea autosize handled on mount and on submit-clearing; input handler removed to avoid unused-symbol TS errors
+  const handleTextareaInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    const el = e.currentTarget;
+    el.style.height = "auto";
+    el.style.height = el.scrollHeight + "px";
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -54,29 +60,29 @@ export default function Hero() {
     }
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, method, contact, message: msg }),
-      });
-
-      if (res.ok) {
-        alert('Сообщение отправлено. Мы свяжемся с вами скоро.');
-        // clear form
-        setName('');
-        setContact('');
-        if (textareaRef.current) textareaRef.current.value = '';
-      } else {
-        const data = await res.json().catch(() => ({}));
-        alert(data?.error || 'Ошибка сервера при отправке. Попробуйте позже.');
-      }
+      // Validation passed — submit the native form to Web3Forms
+      // call native submit so browser posts form data to action URL
+      (e.currentTarget as HTMLFormElement).submit();
+      return;
     } catch (err) {
       console.error(err);
       alert('Не удалось отправить запрос. Проверьте подключение.');
     }
   };
 
-  // contactPlaceholder/contactType removed because related inputs are currently commented out
+  const contactPlaceholder = {
+    email: "Email",
+    phone: "Номер телефона",
+    telegram: "Telegram (@username)",
+    vk: "VK (id или ссылка)",
+  }[method];
+
+  const contactType = {
+    email: "email",
+    phone: "tel",
+    telegram: "text",
+    vk: "text",
+  }[method] as string;
 
   const [showSearchInput, setShowSearchInput] = useState(false)
   const searchInputRef = useRef<HTMLInputElement | null>(null)
@@ -483,20 +489,20 @@ export default function Hero() {
     <section id="reserve" className="px-8 sm:px-8 py-20 sm:py-36 ">
       <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div className="">
-          <p className="mb-6 mt-4 sm:mb-8 text-[#1C3144] font-normal text-[24px] sm:text-[28px]">Форма для простого решения</p> 
-          {/* Форма на создание бренд дизайна */}
+          <p className="mb-6 mt-4 sm:mb-8 text-[#1C3144] font-normal text-[24px] sm:text-[28px]">Форма на создание бренд дизайна</p> 
+          {/* Форма для простого решения */}
      
           <div className="flex flex-col gap-4 sm:pl-16 text-[11px] ">
-            <div className="flex items-center gap-4">
+            {/* <div className="flex items-center gap-4">
               <p className="font-normal  text-[52px]">24</p>
               <p className=" font-normal text-[16px]">Часа в сутки готовы ответить <br /> на вопросы</p>
             </div>
             <div className="flex items-center gap-4">
               <p className="font-normal  text-[52px]">10</p>
               <p className=" font-normal text-[16px]">Минут средняя длина решения <br className="hidden md:block"/>по месту отдыха с попаданием <br className="hidden md:block" />в  потребность</p>
-            </div>
-            {/* <div className="flex items-center gap-4 font-normal text-[16px]">Мои принципы</div> */}
-            {/* <div className="flex items-center gap-4">
+            </div> */}
+            <div className="flex items-center gap-4 font-normal text-[16px]">Мои принципы</div> 
+            <div className="flex items-center gap-4">
               <p className="font-normal  text-[52px]">01</p>
               <p className=" font-normal text-[16px]">Бренд — это система, а не логотип. Делаю не «красивый дизайн», а инструмент для продаж.</p>
             </div> 
@@ -511,13 +517,14 @@ export default function Hero() {
             <div className="flex items-center gap-4">
               <p className="font-normal  text-[52px]">04</p>
               <p className=" font-normal text-[16px]">Работаю до результата. Проект закрыт не когда красиво отрисован, а когда внутри зашиты все необходимые смыслы.</p>
-            </div> */}
+            </div> 
 
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="space-y-6 p-0 sm:p-6 ">
+        <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6 p-0 sm:p-6 ">
           
-          <div className="space-y-2">
+          
+          {/* <div className="space-y-2">
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Фамилия Имя</span>
               <input
@@ -552,12 +559,19 @@ export default function Hero() {
                 placeholder="Время для связи"
               />
             </label>
-          </div>
-          {/* <div className="space-y-2">
+          </div> */}
+          <div className="space-y-2">
+            {/* Web3Forms required hidden fields */}
+            <input type="hidden" name="access_key" value="613dee87-c660-4491-bac5-a70b73b69335" />
+
+
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Фамилия Имя</span>
               <input
+                name="name"
                 type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f]"
                 placeholder="Фамилия Имя"
               />
@@ -577,7 +591,7 @@ export default function Hero() {
               >
                 <option value="email">Email</option>
                 <option value="phone">Телефон</option>
-                <option value="telegram">Telegram</option>
+                <option value="telegram">Tele/gram</option>
                 <option value="vk">ВКонтакте</option>
               </select>
             </label>
@@ -585,6 +599,7 @@ export default function Hero() {
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Контакт</span>
               <input
+                name={method === 'email' ? 'email' : method === 'phone' ? 'phone' : 'contact'}
                 type={contactType}
                 value={contact}
                 onChange={(e) => {
@@ -610,6 +625,7 @@ export default function Hero() {
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Сообщение</span>
               <textarea
+                name="message"
                 ref={textareaRef}
                 onInput={handleTextareaInput}
                 className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f] min-h-[80px]"
@@ -617,7 +633,7 @@ export default function Hero() {
               />
             </label>
             
-          </div> */}
+          </div>
           <button type="submit" className="inline-flex items-center justify-center w-full sm:w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
             отправить запрос
           </button>
