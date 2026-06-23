@@ -9,6 +9,7 @@ import culinary from "../assets/image326.png"
 import map from "../assets/map.png"
 import img1 from "../assets/1_png.png"
 import img2 from "../assets/2_png.png"
+import img3 from "../assets/3_png.png"
 import liesure from "../assets/image 158.png"
 import mappointIcon from "../assets/map_point.png"
 
@@ -86,6 +87,26 @@ export default function Hero() {
   const [showSearchInput, setShowSearchInput] = useState(false)
   const searchInputRef = useRef<HTMLInputElement | null>(null)
 
+  const [newsActive, setNewsActive] = useState(0)
+
+  const newsItems = [
+    {
+      image: img1,
+      title: 'Подарочные карты',
+      text: 'Подарок для чувств Подарите отдых, гастрономические впечатления или спа-процедуры. Это верный способ сказать «люблю тебя», «спасибо», «я скучаю» или «с днем рождения». Кого вы хотите порадовать?'
+    },
+    {
+      image: img2,
+      title: 'Декорации',
+      text: 'Декорации для дома к празднику или встрече — в зависимости от настроения подберём и украсим дом до вашего приезда.'
+    },
+    {
+      image: img3,
+      title: 'Встречи и мероприятия',
+      text: 'Свадьбы, свидания и годовщины. Мы ценим каждый момент важного события так же, как и вы. Поэтому открываем предзапись на организацию '
+    }
+  ]
+
   const headerRef = useRef<HTMLDivElement | null>(null)
   const leftColRef = useRef<HTMLDivElement | null>(null)
   const sectionRef = useRef<HTMLElement | null>(null)
@@ -120,6 +141,8 @@ export default function Hero() {
       window.removeEventListener('resize', calc)
     }
   }, [])
+  const newsOrder = [newsActive, (newsActive + 1) % newsItems.length]
+
   return (
     <div className="rounded-[26px] overflow-visible">
     <section id="hero" className="relative overflow-hidden rounded-[20px] bg-slate-900/5 ">
@@ -713,21 +736,32 @@ export default function Hero() {
       <div className="hidden md:grid gap-10 lg:grid-cols-2">
         <div className="space-y-6 mb-16 col-span-1">
           <p className="mb-8 font-normal text-[28px] sm:text-[32px]">Что у нас нового</p>
-          <h2 className="text-[24px]">Подарочные карты</h2>
-          <p className="text-[16px] ">Подарок для чувств Подарите отдых, гастрономические впечатления или спа-процедуры. Это верный способ сказать «люблю тебя», «спасибо», «я скучаю» или «с днем рождения». Кого вы хотите порадовать?</p>
+          <h2 className="text-[24px]">{newsItems[newsActive].title}</h2>
+          <p className="text-[16px] ">{newsItems[newsActive].text}</p>
         </div>
+
         <div className="grid grid-cols-5 items-center">
-          <div className="rounded-[5px] col-span-3 overflow-hidden aspect-[5/6]">
-            <img src={img1} alt="News 1" className="block w-full h-full object-cover rounded-[5px]" />
-          </div>
-          <div className="rounded-[5px] col-span-2 overflow-hidden aspect-[5/6] relative">
-            <img
-              src={img2}
-              alt="News 2"
-              className="block w-full h-full object-cover rounded-[5px] filter brightness-75 contrast-115 saturate-70 blur-[5px]"
-            />
-            <div className="absolute inset-0 rounded-[5px] bg-[#FEFAE0]/60 mix-blend-screen pointer-events-none" />
-          </div>
+          {newsOrder.map((idx, i) => {
+            const isActive = i === 0
+            const item = newsItems[idx]
+            return (
+              <div
+                key={idx}
+                role="button"
+                tabIndex={0}
+                onClick={() => setNewsActive(idx)}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setNewsActive(idx) }}
+                className={`rounded-[5px] overflow-hidden aspect-[5/6] ${isActive ? 'col-span-3' : 'col-span-2'} ${isActive ? '' : 'relative'} cursor-pointer`}
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className={`block w-full h-full object-cover rounded-[5px] ${isActive ? '' : 'filter brightness-75 contrast-115 saturate-70 blur-[5px]'}`}
+                />
+                {!isActive && <div className="absolute inset-0 rounded-[5px] bg-[#FEFAE0]/60 mix-blend-screen pointer-events-none" />}
+              </div>
+            )
+          })}
         </div>
       </div>
 
