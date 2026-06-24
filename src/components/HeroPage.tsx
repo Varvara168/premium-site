@@ -22,6 +22,8 @@ export default function Hero() {
   const [name, setName] = useState("");
   const [consent, setConsent] = useState(false);
   const [consentError, setConsentError] = useState("");
+  const [nameError, setNameError] = useState("");
+  const [messageError, setMessageError] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   useEffect(() => {
@@ -35,11 +37,25 @@ export default function Hero() {
     const el = e.currentTarget;
     el.style.height = "auto";
     el.style.height = el.scrollHeight + "px";
+    if (messageError) setMessageError('');
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
+    // name validation
+    if (!name || !name.trim()) {
+      setNameError('Пожалуйста, укажите имя.');
+      return;
+    }
+
+    // message validation (use textarea value)
+    const messageValue = textareaRef.current?.value || '';
+    if (messageValue.trim().length < 50) {
+      setMessageError('Пожалуйста, введите сообщение не менее 50 символов.');
+      return;
+    }
+
     // Basic validation depending on selected method
     if (!contact) {
       alert("Пожалуйста, укажите контакт для связи.");
@@ -601,11 +617,12 @@ export default function Hero() {
                 name="name"
                 type="text"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => { setName(e.target.value); if (nameError) setNameError(''); }}
                 className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f]"
                 placeholder="Фамилия Имя"
               />
             </label>
+            {nameError && <p className="mt-2 text-[13px] text-[#70161E]">{nameError}</p>}
 
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0] px-4 py-3">
               <span className="sr-only">Способ связи</span>
@@ -662,6 +679,7 @@ export default function Hero() {
                 placeholder="Ваше сообщение"
               />
             </label>
+            {messageError && <p className="mt-2 text-[13px] text-[#70161E]">{messageError}</p>}
             </div>
 
             <label className="flex items-top gap-3">
