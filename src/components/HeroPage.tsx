@@ -84,10 +84,28 @@ export default function Hero() {
     }
 
     try {
-      // Validation passed — submit the native form to Web3Forms
-      // call native submit so browser posts form data to action URL
-      (e.currentTarget as HTMLFormElement).submit();
-      return;
+      // Validation passed — send form to our server proxy via fetch
+      const formEl = e.currentTarget as HTMLFormElement;
+      const formData = new FormData(formEl);
+
+      const resp = await fetch(formEl.action || '/api/web3forms', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await resp.json().catch(() => ({ success: false, message: 'Invalid response from server' }));
+      if (resp.ok && data && data.success !== false) {
+        // success — give simple feedback and reset
+        alert('Сообщение отправлено. Спасибо!');
+        formEl.reset();
+        setName('');
+        setContact('');
+        setConsent(false);
+        return;
+      } else {
+        alert(data.message || 'Ошибка при отправке формы. Попробуйте позже.');
+        return;
+      }
     } catch (err) {
       console.error(err);
       alert('Не удалось отправить запрос. Проверьте подключение.');

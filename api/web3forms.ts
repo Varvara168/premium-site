@@ -55,8 +55,18 @@ export default async function handler(req: any, res: any) {
       body: params.toString(),
     });
 
+    const contentType = forward.headers.get('content-type') || '';
     const text = await forward.text();
-    res.status(forward.status).setHeader('Content-Type', 'application/json').send(text);
+
+    // If remote returned HTML (Cloudflare challenge), don't forward raw HTML to browser.
+    if (contentType.includes('text/html') || text.trim().startsWith('<!DOCTYPE')) {
+      console.error('Web3Forms returned HTML challenge or unexpected HTML response');
+      res.status(502).json({ success: false, message: 'Remote service blocked the request (Cloudflare). Попробуйте позже.' });
+      return;
+    }
+
+    // Proxy JSON/text responses
+    res.status(forward.status).setHeader('Content-Type', contentType || 'application/json').send(text);
   } catch (err) {
     console.error('web3forms proxy error:', err);
     res.status(500).json({ success: false, message: 'Internal server error' });
