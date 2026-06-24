@@ -1,50 +1,70 @@
-export default async function handler(req: any, res: any) {
+export const config = { runtime: 'edge' };
+
+export default async function handler(req: Request) {
   if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
-    res.status(405).json({ success: false, message: 'Method not allowed' });
-    return;
-  }
-
-  try {
-    // Read raw body
-    const chunks: Uint8Array[] = [];
-    for await (const chunk of req) chunks.push(chunk);
-    const raw = Buffer.concat(chunks).toString();
-
-    const params = new URLSearchParams(raw);
-
-    const key = process.env.WEB3FORMS_KEY;
-    if (!key) {
-      return res.status(500).json({ success: false, message: 'Server missing WEB3FORMS_KEY' });
-    }
-
-    params.set('access_key', key);
-
-    // Basic server-side validation
-    const name = (params.get('name') || '').trim();
-    const message = (params.get('message') || '').trim();
-    const consent = params.get('consent');
-
-    if (!name) return res.status(400).json({ success: false, message: 'Name is required' });
-    if (!message || message.length < 50) return res.status(400).json({ success: false, message: 'Message must be at least 50 characters' });
-    if (!consent) return res.status(400).json({ success: false, message: 'Consent is required' });
-
-    // Forward to Web3Forms with browser-like headers to avoid Cloudflare bot challenges.
-    const forward = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
-      },
-      body: params.toString(),
+    return new Response(JSON.stringify({ success: false, message: 'Method not allowed' }), {
+      status: 405,
+      headers: { 'Content-Type': 'application/json' },
     });
-
-    const text = await forward.text();
-    // Proxy status and body
-    res.status(forward.status).setHeader('Content-Type', 'application/json').send(text);
-  } catch (err) {
-    console.error('web3forms proxy error:', err);
-    res.status(500).json({ success: false, message: 'Internal server error' });
   }
+
+  const formData = await req.formData();
+  const params = new URLSearchParams();
+
+  for (const [key, value] of formData.entries()) {
+    if (typeof value === 'string') {
+      params.append(key, value);
+    }
+  }
+
+  const key = process.env.WEB3FORMS_KEY;
+  if (!key) {
+    return new Response(JSON.stringify({ success: false, message: 'Server missing WEB3FORMS_KEY' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  params.set('access_key', key);
+
+  const name = (params.get('name') || '').trim();
+  const message = (params.get('message') || '').trim();
+  const consent = params.get('consent');
+
+  if (!name) {
+    return new Response(JSON.stringify({ success: false, message: 'Name is required' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  if (!message || message.length < 50) {
+    return new Response(JSON.stringify({ success: false, message: 'Message must be at least 50 characters' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  if (!consent) {
+    return new Response(JSON.stringify({ success: false, message: 'Consent is required' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  const forward = await fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      Accept: 'application/json',
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+    },
+    body: params.toString(),
+  });
+
+  const text = await forward.text();
+  return new Response(text, {
+    status: forward.status,
+    headers: { 'Content-Type': 'application/json' },
+  });
 }
