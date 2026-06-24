@@ -29,10 +29,14 @@ export default async function handler(req: any, res: any) {
     if (!message || message.length < 50) return res.status(400).json({ success: false, message: 'Message must be at least 50 characters' });
     if (!consent) return res.status(400).json({ success: false, message: 'Consent is required' });
 
-    // Forward to Web3Forms
+    // Forward to Web3Forms with browser-like headers to avoid Cloudflare bot challenges.
     const forward = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+      },
       body: params.toString(),
     });
 
