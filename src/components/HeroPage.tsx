@@ -595,7 +595,7 @@ export default function Hero() {
             <input
               type="hidden"
               name="access_key"
-              value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ?? ""}
+              value={import.meta.env.WEB3FORMS_ACCESS_KEY ?? ""}
             />
 
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
