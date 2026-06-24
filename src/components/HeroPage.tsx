@@ -567,7 +567,7 @@ export default function Hero() {
 
           </div>
         </div>
-        <form action="https://api.web3forms.com/submit" method="POST" onSubmit={handleSubmit} className="space-y-6 p-0 sm:p-6 ">
+        <form action="/api/web3forms" method="POST" onSubmit={handleSubmit} className="space-y-6 p-0 sm:p-6 ">
           
           
           {/* <div className="space-y-2">
@@ -607,8 +607,7 @@ export default function Hero() {
             </label>
           </div> */}
           <div className="space-y-2">
-            {/* Web3Forms required hidden fields */}
-            <input type="hidden" name="access_key" value="613dee87-c660-4491-bac5-a70b73b69335" />
+            {/* access_key moved to server — do not keep it in client code */}
 
 
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
@@ -684,6 +683,7 @@ export default function Hero() {
 
             <label className="flex items-top gap-3">
               <input
+                name="consent"
                 type="checkbox"
                 checked={consent}
                 onChange={(e) => { setConsent(e.target.checked); if (e.target.checked) setConsentError(''); }}
