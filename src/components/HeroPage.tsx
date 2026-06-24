@@ -22,8 +22,6 @@ export default function Hero() {
   const [name, setName] = useState("");
   const [consent, setConsent] = useState(false);
   const [consentError, setConsentError] = useState("");
-  const [nameError, setNameError] = useState("");
-  const [messageError, setMessageError] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   useEffect(() => {
@@ -37,25 +35,11 @@ export default function Hero() {
     const el = e.currentTarget;
     el.style.height = "auto";
     el.style.height = el.scrollHeight + "px";
-    if (messageError) setMessageError('');
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    // name validation
-    if (!name || !name.trim()) {
-      setNameError('Пожалуйста, укажите имя.');
-      return;
-    }
-
-    // message validation (use textarea value)
-    const messageValue = textareaRef.current?.value || '';
-    if (messageValue.trim().length < 50) {
-      setMessageError('Пожалуйста, введите сообщение не менее 50 символов.');
-      return;
-    }
-
     // Basic validation depending on selected method
     if (!contact) {
       alert("Пожалуйста, укажите контакт для связи.");
@@ -84,28 +68,10 @@ export default function Hero() {
     }
 
     try {
-      // Validation passed — send form to our server proxy via fetch
-      const formEl = e.currentTarget as HTMLFormElement;
-      const formData = new FormData(formEl);
-
-      const resp = await fetch(formEl.action || '/api/web3forms', {
-        method: 'POST',
-        body: formData,
-      });
-
-      const data = await resp.json().catch(() => ({ success: false, message: 'Invalid response from server' }));
-      if (resp.ok && data && data.success !== false) {
-        // success — give simple feedback and reset
-        alert('Сообщение отправлено. Спасибо!');
-        formEl.reset();
-        setName('');
-        setContact('');
-        setConsent(false);
-        return;
-      } else {
-        alert(data.message || 'Ошибка при отправке формы. Попробуйте позже.');
-        return;
-      }
+      // Validation passed — submit the native form to Web3Forms
+      // call native submit so browser posts form data to action URL
+      (e.currentTarget as HTMLFormElement).submit();
+      return;
     } catch (err) {
       console.error(err);
       alert('Не удалось отправить запрос. Проверьте подключение.');
@@ -585,7 +551,7 @@ export default function Hero() {
 
           </div>
         </div>
-        <form action="/api/web3forms" method="POST" onSubmit={handleSubmit} className="space-y-6 p-0 sm:p-6 ">
+        <form action="https://api.web3forms.com/submit" method="POST" onSubmit={handleSubmit} className="space-y-6 p-0 sm:p-6 ">
           
           
           {/* <div className="space-y-2">
@@ -625,8 +591,12 @@ export default function Hero() {
             </label>
           </div> */}
           <div className="space-y-2">
-            {/* access_key moved to server — do not keep it in client code */}
-
+            {/* Web3Forms required hidden fields */}
+            <input
+              type="hidden"
+              name="access_key"
+              value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ?? ""}
+            />
 
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Фамилия Имя</span>
@@ -634,12 +604,11 @@ export default function Hero() {
                 name="name"
                 type="text"
                 value={name}
-                onChange={(e) => { setName(e.target.value); if (nameError) setNameError(''); }}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full bg-[#FEFAE0] rounded-[5px] px-6 py-4 text-[14px] font-normal text-[#12263f]"
                 placeholder="Фамилия Имя"
               />
             </label>
-            {nameError && <p className="mt-2 text-[13px] text-[#70161E]">{nameError}</p>}
 
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0] px-4 py-3">
               <span className="sr-only">Способ связи</span>
@@ -696,12 +665,10 @@ export default function Hero() {
                 placeholder="Ваше сообщение"
               />
             </label>
-            {messageError && <p className="mt-2 text-[13px] text-[#70161E]">{messageError}</p>}
             </div>
 
             <label className="flex items-top gap-3">
               <input
-                name="consent"
                 type="checkbox"
                 checked={consent}
                 onChange={(e) => { setConsent(e.target.checked); if (e.target.checked) setConsentError(''); }}
@@ -710,12 +677,12 @@ export default function Hero() {
               <span className="text-[14px] text-[#12263f] leading-tight">Подтверждаю согласие на обработку персональных данных</span>
             </label>
 
-            <button type="submit" className="inline-flex items-center justify-center w-full sm:w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+            <div><button type="submit" className="inline-flex items-center justify-center w-full sm:w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
               отправить запрос
             </button>
 
-            {consentError && <p className="mt-0 text-[14px] text-[#70161E] leading-tight">{consentError}</p>}
-            
+            {consentError && <p className=" text-[14px] text-[#70161E] leading-tight">{consentError}</p>}
+            </div>
         </form>
       </div>
     </section>
