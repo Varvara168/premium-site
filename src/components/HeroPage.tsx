@@ -20,6 +20,8 @@ export default function Hero() {
   const [contact, setContact] = useState("");
   const [contactError, setContactError] = useState("");
   const [name, setName] = useState("");
+  const [consent, setConsent] = useState(false);
+  const [consentError, setConsentError] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   useEffect(() => {
@@ -57,6 +59,12 @@ export default function Hero() {
       }
     } else {
       // for telegram / vk we only require non-empty value
+    }
+
+    // consent validation
+    if (!consent) {
+      setConsentError('Данные не отправлены, подтвердите согласие на обработку персональных данных');
+      return;
     }
 
     try {
@@ -654,11 +662,24 @@ export default function Hero() {
                 placeholder="Ваше сообщение"
               />
             </label>
+            </div>
+
+            <label className="flex items-top gap-3">
+              <input
+                type="checkbox"
+                checked={consent}
+                onChange={(e) => { setConsent(e.target.checked); if (e.target.checked) setConsentError(''); }}
+                className="h-4 w-4"
+              />
+              <span className="text-[14px] text-[#12263f] leading-tight">Подтверждаю согласие на обработку персональных данных</span>
+            </label>
+
+            <button type="submit" className="inline-flex items-center justify-center w-full sm:w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
+              отправить запрос
+            </button>
+
+            {consentError && <p className="mt-0 text-[14px] text-[#70161E] leading-tight">{consentError}</p>}
             
-          </div>
-          <button type="submit" className="inline-flex items-center justify-center w-full sm:w-[270px] rounded-[5px] bg-[#70161E] px-8 py-4 text-[16px] font-regular uppercase text-[#FEFAE0] transition duration-300 hover:opacity-90">
-            отправить запрос
-          </button>
         </form>
       </div>
     </section>
