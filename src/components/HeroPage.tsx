@@ -592,11 +592,7 @@ export default function Hero() {
           </div> */}
           <div className="space-y-2">
             {/* Web3Forms required hidden fields */}
-            <input
-              type="hidden"
-              name="access_key"
-              value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ?? ""}
-            />
+            <input type="hidden" name="access_key" value="613dee87-c660-4491-bac5-a70b73b69335" />
 
             <label className="block rounded-[5px] border border-[#1C3144] bg-[#FEFAE0]">
               <span className="sr-only">Фамилия Имя</span>
